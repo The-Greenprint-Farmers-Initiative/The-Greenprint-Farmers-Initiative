@@ -9,27 +9,27 @@ import { useInView } from "react-intersection-observer";
 
 const slides = [
   {
-    image: "/images/image_01_Master_Hub_Aerial_View_Cover_Executive_Summary.png",
+    image: "/images/COMPLETE FARM 3D AERIAL MASTER VIEW (THE HERO IMAGE).png",
     headline: "Feeding Africa.\nGrowing Prosperity.",
     sub: "72 Hubs Across 36 States",
   },
   {
-    image: "/images/image_02_Hub_Entrance__Welcome_Gate_Section_1_Overview.png",
+    image: "/images/ENTRANCE & ADMIN ZONE 3D ARCHITECTURAL RENDER.png",
     headline: "The Future of\nAfrican Agriculture",
     sub: "$8.7 Billion. 15 Years. One Vision.",
   },
   {
-    image: "/images/image_03_Panoramic_Crop_Fields_Section_4_Open_Crop_Fields.png",
+    image: "/images/GREENHOUSE COMPLEX 3D ARCHITECTURAL RENDER (EXTERIOR).png",
     headline: "From Field\nto Factory to World",
     sub: "160 Hectares of Smart Crop Production",
   },
   {
-    image: "/images/image_05_Export_Corridor_Trucks_Section_6_Flow_Diagram.png",
+    image: "/images/FACTORY CORE 3D AERIAL WITH SILOS.png",
     headline: "Farm to Port\nin 48 Hours",
     sub: "Greenprint Cold Chain Fleet",
   },
   {
-    image: "/images/Community_Tree_Planting_Event__improved_version_.png",
+    image: "/images/SOLAR POWER PLANT & ENERGY ZONE 3D ARCHITECTURAL RENDER.png",
     headline: "500 Million Trees\nfor Nigeria",
     sub: "The Green Canopy Programme",
   },

@@ -42,7 +42,7 @@ export default function Navbar() {
                 alt="The Greenprint Farmers Initiative"
                 width={220}
                 height={60}
-                className="h-12 w-auto transition-transform group-hover:scale-105"
+                className="h-12 w-auto transition-transform group-hover:scale-105 mix-blend-screen"
                 priority
               />
             </a>

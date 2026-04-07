@@ -14,6 +14,13 @@ export const metadata: Metadata = {
     "African development",
     "AU Agenda 2063",
   ],
+  icons: {
+    icon: [
+      { url: "/favicon.png", type: "image/png" },
+      { url: "/images/Favicon.png", type: "image/png" },
+    ],
+    apple: "/images/Favicon.png",
+  },
   openGraph: {
     title: "The Greenprint Initiative",
     description:
@@ -30,7 +37,8 @@ export default function RootLayout({
   return (
     <html lang="en" className="h-full antialiased">
       <head>
-        <link rel="icon" href="/images/Favicon.png" type="image/png" />
+        <link rel="icon" href="/favicon.png" type="image/png" sizes="any" />
+        <link rel="apple-touch-icon" href="/images/Favicon.png" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link
