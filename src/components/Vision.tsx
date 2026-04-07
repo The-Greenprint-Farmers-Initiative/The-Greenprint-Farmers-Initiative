@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
+import NigeriaMap from "./NigeriaMap";
 
 export default function Vision() {
   const { ref, inView } = useInView({ triggerOnce: true, threshold: 0.2 });
@@ -55,69 +56,7 @@ export default function Vision() {
             transition={{ duration: 0.8, delay: 0.3 }}
             className="flex justify-center"
           >
-            <div className="relative w-full max-w-lg">
-              {/* Simplified Nigeria outline with hub dots */}
-              <svg
-                viewBox="0 0 500 500"
-                className="w-full h-auto"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                {/* Nigeria outline - simplified */}
-                <path
-                  d="M180 80 L220 60 L280 55 L330 65 L370 80 L400 100 L420 130 L430 170 L425 210 L410 250 L390 280 L370 310 L350 340 L330 360 L300 380 L270 400 L240 410 L210 400 L180 380 L155 350 L140 320 L130 280 L125 240 L130 200 L140 160 L155 120 Z"
-                  fill="#E8F5E9"
-                  stroke="#009639"
-                  strokeWidth="2"
-                />
-                {/* Hub dots - 36 states + FCT */}
-                {[
-                  [270, 110], [300, 100], [240, 95], [310, 130], [250, 130],
-                  [200, 120], [350, 120], [370, 150], [330, 160], [290, 160],
-                  [250, 160], [210, 155], [170, 150], [380, 190], [340, 200],
-                  [300, 200], [260, 195], [220, 190], [175, 185], [360, 230],
-                  [320, 240], [280, 235], [240, 230], [200, 225], [160, 230],
-                  [340, 270], [300, 270], [260, 265], [220, 260], [170, 265],
-                  [320, 310], [280, 305], [240, 300], [300, 340], [260, 340],
-                  [230, 360], [270, 375],
-                ].map(([cx, cy], i) => (
-                  <g key={i}>
-                    <circle
-                      cx={cx}
-                      cy={cy}
-                      r="8"
-                      fill="#009639"
-                      opacity="0.15"
-                    >
-                      <animate
-                        attributeName="r"
-                        values="8;14;8"
-                        dur={`${2 + (i % 3) * 0.5}s`}
-                        repeatCount="indefinite"
-                      />
-                    </circle>
-                    <circle cx={cx} cy={cy} r="4" fill="#009639" />
-                  </g>
-                ))}
-                {/* FCT marker (Abuja - center) */}
-                <circle cx="280" cy="235" r="7" fill="#D4A843" stroke="#D4A843" strokeWidth="2" />
-                <text x="295" y="240" fill="#0D1B2A" fontSize="12" fontWeight="bold">
-                  FCT
-                </text>
-              </svg>
-              {/* Legend */}
-              <div className="absolute bottom-4 left-4 bg-white/90 backdrop-blur-sm rounded-lg p-3 shadow-lg border border-gray-100">
-                <div className="flex items-center gap-2 text-sm">
-                  <div className="w-3 h-3 rounded-full bg-[#009639]" />
-                  <span className="text-gray-600">Greenprint Hub</span>
-                </div>
-                <div className="flex items-center gap-2 text-sm mt-1">
-                  <div className="w-3 h-3 rounded-full bg-[#D4A843]" />
-                  <span className="text-gray-600">FCT Headquarters</span>
-                </div>
-                <div className="text-xs text-gray-400 mt-2">72 Hubs across 36 States + FCT</div>
-              </div>
-            </div>
+            <NigeriaMap />
           </motion.div>
         </div>
       </div>

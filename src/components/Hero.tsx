@@ -45,89 +45,69 @@ const stats = [
 
 export default function Hero() {
   const [current, setCurrent] = useState(0);
-  const [key, setKey] = useState(0);
   const { ref: statsRef, inView: statsInView } = useInView({
     triggerOnce: true,
     threshold: 0.5,
   });
 
-  const goToSlide = useCallback(
-    (index: number) => {
-      setCurrent(index);
-      setKey((k) => k + 1);
-    },
-    []
-  );
+  const goToSlide = useCallback((index: number) => {
+    setCurrent(index);
+  }, []);
 
   useEffect(() => {
     const timer = setInterval(() => {
-      goToSlide((current + 1) % slides.length);
+      setCurrent((prev) => (prev + 1) % slides.length);
     }, 6000);
     return () => clearInterval(timer);
-  }, [current, goToSlide]);
+  }, []);
 
   return (
     <>
       {/* Hero Section */}
       <section className="relative h-screen w-full overflow-hidden">
-        {/* Background images */}
-        <AnimatePresence mode="wait">
-          <motion.div
-            key={`slide-${key}`}
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 1 }}
-            className="absolute inset-0"
+        {/* All background images stacked — crossfade via opacity */}
+        {slides.map((slide, i) => (
+          <div
+            key={slide.image}
+            className="absolute inset-0 transition-opacity duration-[1500ms] ease-in-out"
+            style={{ opacity: i === current ? 1 : 0, zIndex: i === current ? 1 : 0 }}
           >
-            <div className="absolute inset-0 animate-kenburns">
+            <div
+              className={`absolute inset-0 ${i === current ? "animate-kenburns" : ""}`}
+              style={{ transform: i !== current ? "scale(1)" : undefined }}
+            >
               <Image
-                src={slides[current].image}
-                alt={slides[current].headline}
+                src={slide.image}
+                alt={slide.headline}
                 fill
                 className="object-cover"
-                priority={current === 0}
+                priority={i === 0}
                 sizes="100vw"
               />
             </div>
             {/* Dark overlay */}
             <div className="absolute inset-0 bg-black/45" />
-          </motion.div>
-        </AnimatePresence>
+          </div>
+        ))}
 
         {/* Content */}
         <div className="relative z-10 h-full flex flex-col items-center justify-center text-center px-4">
           <AnimatePresence mode="wait">
             <motion.div
-              key={`content-${key}`}
-              initial={{ opacity: 0, y: 30 }}
+              key={current}
+              initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -20 }}
-              transition={{ duration: 0.8, staggerChildren: 0.15 }}
+              exit={{ opacity: 0, y: -15 }}
+              transition={{ duration: 0.6, ease: "easeOut" }}
               className="max-w-5xl"
             >
-              <motion.h1
-                initial={{ opacity: 0, y: 30 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.2 }}
-                className="font-playfair text-4xl sm:text-5xl md:text-7xl font-bold text-white leading-tight whitespace-pre-line"
-              >
+              <h1 className="font-playfair text-4xl sm:text-5xl md:text-7xl font-bold text-white leading-tight whitespace-pre-line">
                 {slides[current].headline}
-              </motion.h1>
-              <motion.p
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.5 }}
-                className="mt-6 text-lg sm:text-xl text-[#D4A843] italic font-playfair"
-              >
+              </h1>
+              <p className="mt-6 text-lg sm:text-xl text-[#D4A843] italic font-playfair">
                 {slides[current].sub}
-              </motion.p>
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.8 }}
-                className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4"
-              >
+              </p>
+              <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
                 <a
                   href="#vision"
                   className="flex items-center gap-2 border-2 border-white text-white px-8 py-3 rounded-full font-semibold hover:bg-white hover:text-[#0D1B2A] transition-all duration-300"
@@ -142,12 +122,12 @@ export default function Hero() {
                   <Download className="w-4 h-4" />
                   Download Business Plan
                 </a>
-              </motion.div>
+              </div>
             </motion.div>
           </AnimatePresence>
 
           {/* Slide indicators */}
-          <div className="absolute bottom-28 sm:bottom-24 flex gap-3">
+          <div className="absolute bottom-28 sm:bottom-24 flex gap-3 z-10">
             {slides.map((_, i) => (
               <button
                 key={i}
@@ -163,7 +143,7 @@ export default function Hero() {
           </div>
 
           {/* Scroll indicator */}
-          <div className="absolute bottom-10 animate-bounce-slow">
+          <div className="absolute bottom-10 animate-bounce-slow z-10">
             <ChevronDown className="w-8 h-8 text-white/70" />
           </div>
         </div>
