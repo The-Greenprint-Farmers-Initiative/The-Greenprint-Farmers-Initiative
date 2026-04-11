@@ -11,21 +11,21 @@ const pillars = [
     title: "Food Sovereignty",
     description:
       "Nigeria will grow, process, package, and export its own food — replacing $4.7 billion in imports with locally produced alternatives and feeding a continent.",
-    image: "/images/GREENHOUSE COMPLEX 3D ARCHITECTURAL RENDER (EXTERIOR).png",
+    image: "/images/SLIDE 3 The Future of African Agriculture.png",
   },
   {
     icon: TreePine,
     title: "Climate Resilience",
     description:
       "500 million trees will be planted across Nigeria — creating green belts, combating desertification, and restoring degraded land for future generations.",
-    image: "/images/SOLAR POWER PLANT & ENERGY ZONE 3D ARCHITECTURAL RENDER.png",
+    image: "/images/SLIDE 5 Powered by Africa's Sun.png",
   },
   {
     icon: Users,
     title: "Youth Prosperity",
     description:
       "Over 2.4 million direct jobs will be created — from farm technicians and greenhouse operators to logistics drivers and export managers — transforming rural economies.",
-    image: "/images/ENTRANCE & ADMIN ZONE 3D ARCHITECTURAL RENDER.png",
+    image: "/images/SLIDE 4 From Field to Factory to World.png",
   },
 ];
 

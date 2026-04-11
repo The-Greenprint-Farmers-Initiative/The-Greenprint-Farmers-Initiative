@@ -37,7 +37,7 @@ export default function Navbar() {
             {/* Logo */}
             <a href="#" className="flex items-center gap-2 group">
               <Image
-                src="/images/LOGO 1.svg"
+                src="/images/Mask Group 3.svg"
                 alt="The Greenprint Farmers Initiative"
                 width={48}
                 height={48}

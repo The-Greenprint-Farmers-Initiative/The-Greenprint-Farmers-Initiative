@@ -17,20 +17,22 @@ export default function Footer() {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12">
           {/* Logo & Tagline */}
           <div className="sm:col-span-2 lg:col-span-1">
-            <div className="mb-4">
+            <div className="flex items-center gap-3 mb-4">
               <Image
-                src="/images/LOGO 1.svg"
+                src="/images/Mask Group 3.svg"
                 alt="The Greenprint Farmers Initiative"
-                width={48}
-                height={48}
-                className="h-12 w-12 mb-3"
+                width={44}
+                height={44}
+                className="h-11 w-11"
               />
-              <span className="text-white font-bold text-sm tracking-wide block">
-                GREENPRINT
-              </span>
-              <span className="text-[#5dc004] text-[11px] font-bold tracking-wider block">
-                FARMERS INITIATIVE
-              </span>
+              <div>
+                <span className="text-white font-bold text-sm tracking-wide block">
+                  GREENPRINT
+                </span>
+                <span className="text-[#5dc004] text-[11px] font-bold tracking-wider block">
+                  FARMERS INITIATIVE
+                </span>
+              </div>
             </div>
             <p className="text-white/30 text-sm leading-relaxed font-playfair italic mt-3">
               Feeding Africa. Growing Prosperity.

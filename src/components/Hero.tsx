@@ -27,8 +27,8 @@ const slides = [
     sub: "Processing, Packaging, and Exporting — All in One Hub",
   },
   {
-    image: "/images/SLIDE 5 Powered by Africa\u2019s Sun.png",
-    headline: "Powered by\nAfrica\u2019s Sun",
+    image: "/images/SLIDE 5 Powered by Africa's Sun.png",
+    headline: "Powered by\nAfrica's Sun",
     sub: "Clean Energy Driving Every Greenprint Hub",
   },
 ];
