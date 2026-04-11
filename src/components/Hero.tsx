@@ -7,28 +7,28 @@ import { ChevronDown } from "lucide-react";
 
 const slides = [
   {
-    image: "/images/COMPLETE FARM 3D AERIAL MASTER VIEW (THE HERO IMAGE).png",
+    image: "/images/SLIDE 1 Feeding Africa. Growing Prosperity. Planting the Future.png",
     headline: "Feeding Africa.\nGrowing Prosperity.\nPlanting the Future.",
     sub: "A 15-Year Vision for Continental Food Sovereignty",
   },
   {
-    image: "/images/ENTRANCE & ADMIN ZONE 3D ARCHITECTURAL RENDER.png",
+    image: "/images/SLIDE 2 72 Hubs. 36 States. One Vision.png",
     headline: "72 Hubs.\n36 States.\nOne Vision.",
     sub: "$8.7 Billion Agro-Industrial Programme for Nigeria",
   },
   {
-    image: "/images/GREENHOUSE COMPLEX 3D ARCHITECTURAL RENDER (EXTERIOR).png",
+    image: "/images/SLIDE 3 The Future of African Agriculture.png",
     headline: "The Future of\nAfrican Agriculture",
     sub: "Soilless Farming. 90% Less Water. 365 Days a Year.",
   },
   {
-    image: "/images/FACTORY CORE 3D AERIAL WITH SILOS.png",
+    image: "/images/SLIDE 4 From Field to Factory to World.png",
     headline: "From Field\nto Factory to World",
     sub: "Processing, Packaging, and Exporting — All in One Hub",
   },
   {
-    image: "/images/SOLAR POWER PLANT & ENERGY ZONE 3D ARCHITECTURAL RENDER.png",
-    headline: "Powered by\nAfrica's Sun",
+    image: "/images/SLIDE 5 Powered by Africa\u2019s Sun.png",
+    headline: "Powered by\nAfrica\u2019s Sun",
     sub: "Clean Energy Driving Every Greenprint Hub",
   },
 ];
