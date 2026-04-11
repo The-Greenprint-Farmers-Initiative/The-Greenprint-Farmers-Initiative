@@ -89,9 +89,9 @@ export default function Endorsement() {
             aims to be that framework.
           </blockquote>
           <div className="mt-8">
-            <div className="font-bold text-white">The Ambassador</div>
+            <div className="font-bold text-white">Founders</div>
             <div className="text-sm text-white/40">
-              Founder, The Greenprint Farmers Initiative
+              The Greenprint Farmers Initiative
             </div>
           </div>
         </motion.div>
