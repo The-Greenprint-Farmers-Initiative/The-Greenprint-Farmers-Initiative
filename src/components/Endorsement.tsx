@@ -63,7 +63,7 @@ export default function Endorsement() {
               initial={{ opacity: 0, scale: 0.8 }}
               animate={inView ? { opacity: 1, scale: 1 } : {}}
               transition={{ duration: 0.5, delay: 0.2 + i * 0.08 }}
-              className="bg-white/5 border border-white/10 rounded-2xl p-6 text-center w-40 hover:border-[#D4A843]/30 transition-all duration-500"
+              className="bg-white/5 border border-white/10 rounded-2xl p-4 sm:p-6 text-center w-28 sm:w-40 hover:border-[#D4A843]/30 transition-all duration-500"
             >
               <div className="font-space text-2xl font-bold text-[#D4A843] mb-2">
                 {item.abbr}

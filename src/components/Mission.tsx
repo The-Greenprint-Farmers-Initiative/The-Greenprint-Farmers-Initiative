@@ -18,14 +18,14 @@ export default function Mission() {
   return (
     <section id="mission" className="py-24 bg-gray-50" ref={ref}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid lg:grid-cols-2 gap-16 items-center">
+        <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
           {/* Left: Text */}
           <motion.div
             initial={{ opacity: 0, x: -40 }}
             animate={inView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.8 }}
           >
-            <div className="relative pl-8">
+            <div className="relative pl-4 sm:pl-8">
               {/* Gold accent line */}
               <div className="absolute left-0 top-0 bottom-0 w-1 bg-[#D4A843] rounded-full" />
               <span className="text-[#009639] text-sm font-bold tracking-[0.3em] uppercase">
@@ -48,7 +48,7 @@ export default function Mission() {
             </div>
 
             {/* Stats */}
-            <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mt-10 pl-8">
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4 mt-8 sm:mt-10 pl-0 sm:pl-8">
               {stats.map((stat, i) => (
                 <motion.div
                   key={i}

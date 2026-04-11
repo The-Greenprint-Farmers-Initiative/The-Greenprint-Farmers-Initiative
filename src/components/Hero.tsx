@@ -77,7 +77,7 @@ export default function Hero() {
             transition={{ duration: 0.6, ease: "easeOut" }}
             className="max-w-5xl"
           >
-            <h1 className="font-playfair text-4xl sm:text-5xl md:text-7xl font-bold text-white leading-tight whitespace-pre-line">
+            <h1 className="font-playfair text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-bold text-white leading-tight whitespace-pre-line">
               {slides[current].headline}
             </h1>
             <p className="mt-6 text-lg sm:text-xl text-[#D4A843] italic font-playfair">
@@ -86,7 +86,7 @@ export default function Hero() {
             <div className="mt-10">
               <a
                 href="#problem"
-                className="inline-flex items-center gap-2 border-2 border-[#D4A843] text-[#D4A843] hover:bg-[#D4A843] hover:text-[#0D1B2A] px-10 py-4 rounded-full font-semibold text-lg transition-all duration-300"
+                className="inline-flex items-center gap-2 border-2 border-[#D4A843] text-[#D4A843] hover:bg-[#D4A843] hover:text-[#0D1B2A] px-6 sm:px-10 py-3 sm:py-4 rounded-full font-semibold text-base sm:text-lg transition-all duration-300"
               >
                 Discover the Vision
               </a>

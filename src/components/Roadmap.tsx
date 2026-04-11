@@ -96,7 +96,7 @@ export default function Roadmap() {
                 <div className="text-xs font-bold tracking-[0.2em] uppercase mb-1" style={{ color: phase.color }}>
                   {phase.phase}
                 </div>
-                <h3 className="font-playfair text-2xl font-bold text-white mb-1">
+                <h3 className="font-playfair text-xl sm:text-2xl font-bold text-white mb-1">
                   {phase.title}
                 </h3>
                 <p className="text-white/40 text-sm font-space mb-6">

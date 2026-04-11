@@ -52,7 +52,7 @@ export default function TheProblem() {
           initial={{ opacity: 0, y: 30 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8 }}
-          className="text-center mb-16"
+          className="text-center mb-10 sm:mb-16"
         >
           <span className="text-red-400 text-sm font-bold tracking-[0.3em] uppercase">
             The Crisis
