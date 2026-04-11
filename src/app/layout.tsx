@@ -2,29 +2,22 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "The Greenprint Initiative — Nigeria's $8.7B Agro-Industrial Programme",
+  title: "The Greenprint Farmers Initiative — Feeding Africa. Growing Prosperity. Planting the Future.",
   description:
-    "The Greenprint Initiative is Africa's most comprehensive agro-industrial, reforestation, and food security programme. 72 Hubs. 36 States. 500 Million Trees.",
+    "A 15-year, $8.7 billion vision to build 72 agro-industrial hubs across Nigeria's 36 states — creating 2.4 million jobs, planting 500 million trees, and transforming Africa's food systems.",
   keywords: [
-    "Greenprint Initiative",
+    "Greenprint Farmers Initiative",
     "Nigeria agriculture",
-    "agro-industrial",
-    "food security",
+    "food sovereignty",
+    "African Union",
+    "Agenda 2063",
     "reforestation",
-    "African development",
-    "AU Agenda 2063",
+    "agro-industrial",
   ],
-  icons: {
-    icon: [
-      { url: "/favicon.png", type: "image/png" },
-      { url: "/images/Favicon.png", type: "image/png" },
-    ],
-    apple: "/images/Favicon.png",
-  },
   openGraph: {
-    title: "The Greenprint Initiative",
+    title: "The Greenprint Farmers Initiative",
     description:
-      "Nigeria's $8.7 Billion Agro-Industrial, Reforestation & Food Security Programme",
+      "A 15-year vision to transform Africa's food systems. 72 Hubs. 36 States. 500 Million Trees.",
     type: "website",
   },
 };
@@ -37,8 +30,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="h-full antialiased">
       <head>
-        <link rel="icon" href="/favicon.png" type="image/png" sizes="any" />
-        <link rel="apple-touch-icon" href="/images/Favicon.png" />
+        <link rel="icon" href="/images/Favicon.svg" type="image/svg+xml" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link

@@ -1,156 +1,132 @@
 "use client";
 
-// Accurate Nigeria map outline with hub dots positioned at actual state capital locations
-// Viewbox calibrated to Nigeria's approximate lat/lng bounds: lng 2.7-14.7, lat 4.2-13.9
+// Nigeria map with accurate outline and state capital hub dots
+// Coordinates derived from Nigeria's geographic bounds (lng ~2.7-14.7, lat ~4.2-13.9)
+// Mapped to SVG viewbox with x = longitude scaled, y = latitude inverted
 
 const states = [
-  { name: "Lagos", x: 108, y: 355 },
-  { name: "Ogun", x: 120, y: 330 },
-  { name: "Oyo", x: 135, y: 300 },
-  { name: "Osun", x: 155, y: 310 },
-  { name: "Ondo", x: 170, y: 335 },
-  { name: "Ekiti", x: 175, y: 300 },
-  { name: "Kwara", x: 155, y: 260 },
-  { name: "Edo", x: 195, y: 345 },
-  { name: "Delta", x: 195, y: 370 },
-  { name: "Bayelsa", x: 210, y: 395 },
-  { name: "Rivers", x: 230, y: 390 },
-  { name: "Imo", x: 245, y: 365 },
-  { name: "Abia", x: 260, y: 365 },
-  { name: "Anambra", x: 240, y: 345 },
-  { name: "Enugu", x: 260, y: 335 },
-  { name: "Ebonyi", x: 275, y: 340 },
-  { name: "Cross River", x: 290, y: 370 },
-  { name: "Akwa Ibom", x: 265, y: 390 },
-  { name: "Kogi", x: 215, y: 290 },
-  { name: "Benue", x: 280, y: 295 },
-  { name: "Nassarawa", x: 260, y: 260 },
-  { name: "Plateau", x: 280, y: 240 },
-  { name: "Taraba", x: 320, y: 270 },
-  { name: "Adamawa", x: 345, y: 230 },
-  { name: "Gombe", x: 320, y: 200 },
-  { name: "Bauchi", x: 295, y: 200 },
-  { name: "Kaduna", x: 240, y: 190 },
-  { name: "Niger", x: 190, y: 220 },
-  { name: "Kebbi", x: 135, y: 175 },
-  { name: "Sokoto", x: 165, y: 120 },
-  { name: "Zamfara", x: 195, y: 150 },
-  { name: "Katsina", x: 235, y: 120 },
-  { name: "Kano", x: 260, y: 150 },
-  { name: "Jigawa", x: 290, y: 130 },
-  { name: "Yobe", x: 340, y: 140 },
-  { name: "Borno", x: 370, y: 160 },
-  { name: "FCT", x: 235, y: 260, isFCT: true },
+  { name: "Sokoto", x: 130, y: 68 },
+  { name: "Zamfara", x: 160, y: 88 },
+  { name: "Katsina", x: 197, y: 72 },
+  { name: "Kano", x: 220, y: 100 },
+  { name: "Jigawa", x: 255, y: 88 },
+  { name: "Yobe", x: 306, y: 88 },
+  { name: "Borno", x: 348, y: 98 },
+  { name: "Kebbi", x: 110, y: 118 },
+  { name: "Niger", x: 155, y: 158 },
+  { name: "Kaduna", x: 200, y: 138 },
+  { name: "Bauchi", x: 260, y: 140 },
+  { name: "Gombe", x: 292, y: 138 },
+  { name: "Adamawa", x: 330, y: 158 },
+  { name: "Kwara", x: 125, y: 205 },
+  { name: "FCT", x: 195, y: 198, isFCT: true },
+  { name: "Nassarawa", x: 220, y: 202 },
+  { name: "Plateau", x: 245, y: 178 },
+  { name: "Taraba", x: 295, y: 195 },
+  { name: "Oyo", x: 105, y: 238 },
+  { name: "Osun", x: 120, y: 252 },
+  { name: "Ekiti", x: 140, y: 248 },
+  { name: "Kogi", x: 170, y: 228 },
+  { name: "Benue", x: 230, y: 228 },
+  { name: "Ogun", x: 90, y: 262 },
+  { name: "Lagos", x: 80, y: 278 },
+  { name: "Ondo", x: 130, y: 270 },
+  { name: "Edo", x: 150, y: 280 },
+  { name: "Anambra", x: 178, y: 275 },
+  { name: "Enugu", x: 198, y: 268 },
+  { name: "Ebonyi", x: 216, y: 272 },
+  { name: "Cross River", x: 238, y: 288 },
+  { name: "Delta", x: 145, y: 298 },
+  { name: "Imo", x: 180, y: 292 },
+  { name: "Abia", x: 198, y: 288 },
+  { name: "Rivers", x: 172, y: 310 },
+  { name: "Bayelsa", x: 155, y: 318 },
+  { name: "Akwa Ibom", x: 212, y: 310 },
 ];
 
 export default function NigeriaMap() {
   return (
-    <div className="relative w-full max-w-lg mx-auto">
+    <div className="relative w-full max-w-xl mx-auto">
       <svg
-        viewBox="50 70 400 370"
-        className="w-full h-auto"
+        viewBox="40 30 360 330"
+        className="w-full h-auto drop-shadow-lg"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
       >
-        {/* Accurate Nigeria outline */}
+        {/* Nigeria outline — accurate shape */}
         <path
           d="
-            M 90 350
-            C 85 340, 82 330, 85 320
-            C 88 310, 92 305, 95 298
-            L 100 290
-            C 102 282, 105 275, 108 268
-            L 115 255
-            C 118 248, 120 242, 122 236
-            L 128 220
-            C 130 212, 132 205, 130 198
-            C 128 190, 125 185, 122 178
-            L 118 170
-            C 120 162, 125 158, 130 155
-            C 138 150, 142 148, 148 145
-            L 155 138
-            C 160 132, 162 126, 165 120
-            C 168 115, 172 112, 178 110
-            C 185 107, 192 108, 200 110
-            C 208 112, 215 110, 222 108
-            C 230 105, 238 100, 248 100
-            C 258 100, 265 105, 272 108
-            C 280 112, 288 110, 295 112
-            C 305 115, 312 120, 320 125
-            C 328 130, 338 128, 348 125
-            C 355 122, 362 125, 368 130
-            C 375 136, 380 142, 385 150
-            C 390 158, 392 165, 395 172
-            C 398 180, 400 188, 398 196
-            C 395 205, 390 212, 385 218
-            C 378 228, 370 235, 362 242
-            C 355 250, 348 258, 340 265
-            C 332 272, 325 280, 318 288
-            C 312 295, 308 302, 305 310
-            C 302 318, 300 325, 298 332
-            C 295 340, 292 348, 288 355
-            C 284 362, 280 368, 275 375
-            C 268 382, 260 388, 252 392
-            C 245 396, 238 400, 230 402
-            C 222 404, 215 405, 208 404
-            C 200 402, 195 398, 190 394
-            C 185 388, 180 382, 178 376
-            C 175 368, 170 362, 165 358
-            C 158 352, 150 350, 142 350
-            C 135 350, 128 352, 120 355
-            C 112 358, 105 360, 100 358
-            C 95 356, 92 353, 90 350
+            M 75 280
+            C 72 274, 70 266, 72 258
+            L 75 248
+            C 73 240, 70 235, 68 228
+            C 65 218, 68 210, 72 202
+            L 80 192
+            C 82 185, 85 178, 88 172
+            L 92 165
+            C 90 158, 88 150, 90 142
+            C 92 134, 95 128, 98 122
+            L 105 112
+            C 108 108, 112 105, 118 102
+            C 125 98, 130 95, 138 90
+            C 145 85, 150 78, 155 72
+            C 160 66, 168 60, 178 58
+            C 188 55, 198 58, 208 62
+            C 215 65, 222 64, 232 60
+            C 242 56, 252 54, 262 56
+            C 272 58, 280 62, 290 68
+            C 298 73, 308 75, 318 72
+            C 328 70, 338 72, 348 78
+            C 355 83, 360 90, 365 98
+            L 370 108
+            C 372 118, 370 128, 365 138
+            C 360 148, 352 155, 345 162
+            C 338 170, 330 178, 322 186
+            C 315 194, 308 202, 302 210
+            C 296 218, 290 226, 285 234
+            C 278 244, 270 252, 262 260
+            C 255 268, 248 276, 240 284
+            C 232 292, 225 300, 218 308
+            C 212 315, 205 318, 198 320
+            C 188 324, 178 326, 168 328
+            C 158 330, 148 326, 140 322
+            L 130 315
+            C 122 308, 118 305, 112 302
+            C 105 298, 98 296, 92 292
+            C 85 288, 80 285, 75 280
             Z
           "
           fill="#E8F5E9"
           stroke="#009639"
-          strokeWidth="2.5"
+          strokeWidth="2"
         />
 
-        {/* Inner detail lines for geographic texture */}
-        <path
-          d="M 130 260 Q 180 250, 230 260 Q 280 270, 310 290"
-          stroke="#009639"
-          strokeWidth="0.5"
-          opacity="0.15"
-          fill="none"
-        />
-        <path
-          d="M 140 200 Q 200 190, 260 200 Q 310 210, 350 230"
-          stroke="#009639"
-          strokeWidth="0.5"
-          opacity="0.15"
-          fill="none"
-        />
-        <path
-          d="M 155 155 Q 220 150, 290 155 Q 340 160, 370 170"
-          stroke="#009639"
-          strokeWidth="0.5"
-          opacity="0.15"
-          fill="none"
-        />
+        {/* State boundary hints */}
+        <path d="M 98 175 Q 160 170, 210 190 Q 250 200, 290 210" stroke="#009639" strokeWidth="0.4" opacity="0.2" fill="none" />
+        <path d="M 108 130 Q 180 125, 250 138 Q 310 148, 350 145" stroke="#009639" strokeWidth="0.4" opacity="0.2" fill="none" />
+        <path d="M 80 248 Q 140 245, 195 260 Q 230 268, 250 280" stroke="#009639" strokeWidth="0.4" opacity="0.2" fill="none" />
 
-        {/* State hub dots */}
+        {/* Hub dots for each state */}
         {states.map((state, i) => (
           <g key={state.name}>
-            {/* Pulse ring */}
+            {/* Animated pulse */}
             <circle
               cx={state.x}
               cy={state.y}
-              r="6"
+              r="5"
               fill={state.isFCT ? "#D4A843" : "#009639"}
               opacity="0.15"
             >
               <animate
                 attributeName="r"
-                values="6;12;6"
-                dur={`${2 + (i % 4) * 0.4}s`}
+                values="5;10;5"
+                dur={`${2 + (i % 5) * 0.3}s`}
                 repeatCount="indefinite"
               />
               <animate
                 attributeName="opacity"
                 values="0.2;0.05;0.2"
-                dur={`${2 + (i % 4) * 0.4}s`}
+                dur={`${2 + (i % 5) * 0.3}s`}
                 repeatCount="indefinite"
               />
             </circle>
@@ -158,18 +134,18 @@ export default function NigeriaMap() {
             <circle
               cx={state.x}
               cy={state.y}
-              r={state.isFCT ? "5" : "3.5"}
+              r={state.isFCT ? "4.5" : "3"}
               fill={state.isFCT ? "#D4A843" : "#009639"}
               stroke="white"
-              strokeWidth="1"
+              strokeWidth="0.8"
             />
             {/* FCT label */}
             {state.isFCT && (
               <text
-                x={state.x + 10}
+                x={state.x + 8}
                 y={state.y + 4}
                 fill="#0D1B2A"
-                fontSize="11"
+                fontSize="10"
                 fontWeight="bold"
                 fontFamily="'DM Sans', sans-serif"
               >
@@ -178,36 +154,22 @@ export default function NigeriaMap() {
             )}
           </g>
         ))}
-
-        {/* Title */}
-        <text
-          x="230"
-          y="435"
-          fill="#0D1B2A"
-          fontSize="13"
-          fontWeight="600"
-          textAnchor="middle"
-          fontFamily="'DM Sans', sans-serif"
-          opacity="0.5"
-        >
-          Federal Republic of Nigeria
-        </text>
       </svg>
 
       {/* Legend */}
-      <div className="absolute bottom-2 left-2 bg-white/90 backdrop-blur-sm rounded-lg p-3 shadow-lg border border-gray-100">
+      <div className="flex flex-wrap justify-center gap-6 mt-4">
         <div className="flex items-center gap-2 text-sm">
           <div className="w-3 h-3 rounded-full bg-[#009639]" />
-          <span className="text-gray-600">Greenprint Hub (36 States)</span>
+          <span className="text-gray-500">Planned Hub Location (36 States)</span>
         </div>
-        <div className="flex items-center gap-2 text-sm mt-1">
+        <div className="flex items-center gap-2 text-sm">
           <div className="w-3 h-3 rounded-full bg-[#D4A843]" />
-          <span className="text-gray-600">FCT Headquarters</span>
-        </div>
-        <div className="text-xs text-gray-400 mt-2">
-          72 Hubs across 36 States + FCT
+          <span className="text-gray-500">FCT Headquarters</span>
         </div>
       </div>
+      <p className="text-center text-xs text-gray-400 mt-2">
+        72 planned hubs across all 36 States + FCT
+      </p>
     </div>
   );
 }

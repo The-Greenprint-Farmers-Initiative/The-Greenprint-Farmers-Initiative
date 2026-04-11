@@ -2,15 +2,14 @@
 
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X, Download } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import Image from "next/image";
 
 const navLinks = [
-  { label: "About", href: "#vision" },
-  { label: "The Hub", href: "#hub" },
-  { label: "Investment", href: "#investors" },
-  { label: "Impact", href: "#impact" },
-  { label: "Gallery", href: "#gallery" },
+  { label: "The Vision", href: "#vision" },
+  { label: "Our Mission", href: "#mission" },
+  { label: "Roadmap", href: "#roadmap" },
+  { label: "Impact", href: "#benefits" },
   { label: "Contact", href: "#contact" },
 ];
 
@@ -38,13 +37,21 @@ export default function Navbar() {
             {/* Logo */}
             <a href="#" className="flex items-center gap-2 group">
               <Image
-                src="/images/website navbar logo.png"
+                src="/images/LOGO 1.svg"
                 alt="The Greenprint Farmers Initiative"
-                width={220}
-                height={60}
-                className="h-12 w-auto transition-transform group-hover:scale-105 mix-blend-screen"
+                width={48}
+                height={48}
+                className="h-12 w-12 transition-transform group-hover:scale-105"
                 priority
               />
+              <div className="hidden sm:block">
+                <span className="text-white font-bold text-sm tracking-wide">
+                  GREENPRINT
+                </span>
+                <span className="block text-[#5dc004] text-[11px] font-bold tracking-wider">
+                  FARMERS INITIATIVE
+                </span>
+              </div>
             </a>
 
             {/* Desktop nav */}
@@ -60,10 +67,9 @@ export default function Navbar() {
               ))}
               <a
                 href="#contact"
-                className="flex items-center gap-2 bg-[#009639] hover:bg-[#007a2e] text-white text-sm font-semibold px-5 py-2.5 rounded-full transition-all duration-300 hover:shadow-lg hover:shadow-green-900/30"
+                className="bg-[#009639] hover:bg-[#007a2e] text-white text-sm font-semibold px-5 py-2.5 rounded-full transition-all duration-300 hover:shadow-lg hover:shadow-green-900/30"
               >
-                <Download className="w-4 h-4" />
-                Download Business Plan
+                Stay Informed
               </a>
             </div>
 
@@ -90,11 +96,7 @@ export default function Navbar() {
             className="fixed inset-y-0 right-0 w-80 bg-[#0D1B2A] z-50 shadow-2xl lg:hidden"
           >
             <div className="flex justify-end p-6">
-              <button
-                onClick={() => setMobileOpen(false)}
-                className="text-white"
-                aria-label="Close menu"
-              >
+              <button onClick={() => setMobileOpen(false)} className="text-white" aria-label="Close menu">
                 <X className="w-6 h-6" />
               </button>
             </div>
@@ -115,10 +117,9 @@ export default function Navbar() {
               <a
                 href="#contact"
                 onClick={() => setMobileOpen(false)}
-                className="flex items-center justify-center gap-2 bg-[#009639] text-white font-semibold px-5 py-3 rounded-full mt-4"
+                className="flex items-center justify-center bg-[#009639] text-white font-semibold px-5 py-3 rounded-full mt-4"
               >
-                <Download className="w-4 h-4" />
-                Download Business Plan
+                Stay Informed
               </a>
             </div>
           </motion.div>
