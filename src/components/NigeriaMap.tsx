@@ -1,64 +1,62 @@
 "use client";
 
-// Hub dot positions calibrated to NG MAP.svg (viewBox 2880x2160)
-// Map occupies roughly: left ~280, right ~2200, top ~100, bottom ~1900
-// Positions based on actual Nigerian state geography:
-// - North: Sokoto/Katsina/Kano/Jigawa/Borno across top
-// - Middle Belt: Kwara/Niger/Kogi/Benue/Plateau/Nassarawa/FCT
-// - South-West: Lagos/Ogun/Oyo/Osun/Ondo/Ekiti
-// - South-East: Anambra/Enugu/Imo/Abia/Ebonyi
-// - South-South: Edo/Delta/Bayelsa/Rivers/Cross River/Akwa Ibom
+// Hub positions calculated from geographic coordinates mapped to NG MAP.svg
+// Map path bounding box within 2880x2160 viewBox: x=246, y=112, w=2397, h=1946
+// Geo mapping: lon 2.7-14.7°E → x 246-2643, lat 4.2-13.9°N → y 112-2058
 
 const states = [
   // North-West
-  { name: "Sokoto", x: 590, y: 240 },
-  { name: "Kebbi", x: 430, y: 470 },
-  { name: "Zamfara", x: 740, y: 360 },
-  { name: "Katsina", x: 940, y: 230 },
-  { name: "Kaduna", x: 920, y: 530 },
+  { name: "Sokoto", x: 753, y: 281 },
+  { name: "Kebbi", x: 546, y: 403 },
+  { name: "Zamfara", x: 1037, y: 459 },
+  { name: "Katsina", x: 1225, y: 293 },
+  { name: "Kaduna", x: 1191, y: 790 },
+  { name: "Kano", x: 1409, y: 493 },
+  { name: "Jigawa", x: 1572, y: 541 },
 
   // North-East
-  { name: "Kano", x: 1100, y: 360 },
-  { name: "Jigawa", x: 1280, y: 280 },
-  { name: "Bauchi", x: 1320, y: 530 },
-  { name: "Gombe", x: 1480, y: 490 },
-  { name: "Yobe", x: 1560, y: 310 },
-  { name: "Borno", x: 1810, y: 360 },
-  { name: "Adamawa", x: 1700, y: 660 },
-  { name: "Taraba", x: 1520, y: 740 },
+  { name: "Bauchi", x: 1672, y: 832 },
+  { name: "Gombe", x: 1938, y: 836 },
+  { name: "Yobe", x: 2096, y: 543 },
+  { name: "Borno", x: 2335, y: 523 },
+  { name: "Adamawa", x: 2196, y: 1049 },
+  { name: "Taraba", x: 1976, y: 1117 },
 
   // North-Central
-  { name: "Niger", x: 680, y: 640 },
-  { name: "Kwara", x: 530, y: 810 },
-  { name: "Plateau", x: 1220, y: 680 },
-  { name: "Nassarawa", x: 1120, y: 790 },
-  { name: "Kogi", x: 810, y: 900 },
-  { name: "Benue", x: 1180, y: 890 },
-  { name: "FCT", x: 960, y: 770, isFCT: true },
+  { name: "Niger", x: 1017, y: 973 },
+  { name: "Kwara", x: 616, y: 1195 },
+  { name: "Plateau", x: 1482, y: 910 },
+  { name: "Nassarawa", x: 1409, y: 1197 },
+  { name: "Kogi", x: 1053, y: 1336 },
+  { name: "Benue", x: 1413, y: 1350 },
+  { name: "FCT", x: 1203, y: 1083, isFCT: true },
 
   // South-West
-  { name: "Oyo", x: 470, y: 960 },
-  { name: "Osun", x: 560, y: 1020 },
-  { name: "Ekiti", x: 650, y: 980 },
-  { name: "Ondo", x: 600, y: 1110 },
-  { name: "Ogun", x: 400, y: 1080 },
-  { name: "Lagos", x: 340, y: 1170 },
+  { name: "Oyo", x: 492, y: 1418 },
+  { name: "Osun", x: 618, y: 1342 },
+  { name: "Ekiti", x: 749, y: 1372 },
+  { name: "Ondo", x: 745, y: 1446 },
+  { name: "Ogun", x: 376, y: 1464 },
+  { name: "Lagos", x: 386, y: 1607 },
 
   // South-South
-  { name: "Edo", x: 740, y: 1120 },
-  { name: "Delta", x: 700, y: 1260 },
-  { name: "Bayelsa", x: 740, y: 1380 },
-  { name: "Rivers", x: 860, y: 1340 },
-  { name: "Akwa Ibom", x: 1060, y: 1360 },
-  { name: "Cross River", x: 1160, y: 1220 },
+  { name: "Edo", x: 831, y: 1629 },
+  { name: "Delta", x: 841, y: 1719 },
+  { name: "Bayelsa", x: 957, y: 1914 },
+  { name: "Rivers", x: 1107, y: 1936 },
+  { name: "Akwa Ibom", x: 1291, y: 1889 },
+  { name: "Cross River", x: 1369, y: 1908 },
 
   // South-East
-  { name: "Anambra", x: 850, y: 1140 },
-  { name: "Enugu", x: 950, y: 1060 },
-  { name: "Ebonyi", x: 1060, y: 1100 },
-  { name: "Imo", x: 880, y: 1230 },
-  { name: "Abia", x: 980, y: 1200 },
+  { name: "Anambra", x: 1119, y: 1655 },
+  { name: "Enugu", x: 1205, y: 1609 },
+  { name: "Ebonyi", x: 1325, y: 1633 },
+  { name: "Imo", x: 1111, y: 1801 },
+  { name: "Abia", x: 1203, y: 1791 },
 ];
+
+const LOGO_SIZE = 80;
+const FCT_LOGO_SIZE = 110;
 
 export default function NigeriaMap() {
   return (
@@ -77,64 +75,68 @@ export default function NigeriaMap() {
           height="2160"
         />
 
-        {/* Hub dots */}
-        {states.map((state, i) => (
-          <g key={state.name}>
-            {/* Pulse */}
-            <circle
-              cx={state.x}
-              cy={state.y}
-              r="18"
-              fill={state.isFCT ? "#D4A843" : "#009639"}
-              opacity="0.15"
-            >
-              <animate
-                attributeName="r"
-                values="18;32;18"
-                dur={`${2 + (i % 5) * 0.3}s`}
-                repeatCount="indefinite"
-              />
-              <animate
-                attributeName="opacity"
-                values="0.25;0.05;0.25"
-                dur={`${2 + (i % 5) * 0.3}s`}
-                repeatCount="indefinite"
-              />
-            </circle>
-            {/* Dot */}
-            <circle
-              cx={state.x}
-              cy={state.y}
-              r={state.isFCT ? 20 : 14}
-              fill={state.isFCT ? "#D4A843" : "#009639"}
-              stroke="white"
-              strokeWidth={state.isFCT ? 4 : 3}
-            />
-            {/* FCT label */}
-            {state.isFCT && (
-              <text
-                x={state.x + 32}
-                y={state.y + 10}
-                fill="#D4A843"
-                fontSize="42"
-                fontWeight="bold"
-                fontFamily="'DM Sans', sans-serif"
+        {/* Hub logos with pulse */}
+        {states.map((state, i) => {
+          const size = state.isFCT ? FCT_LOGO_SIZE : LOGO_SIZE;
+          return (
+            <g key={state.name}>
+              {/* Pulse ring */}
+              <circle
+                cx={state.x}
+                cy={state.y}
+                r={size * 0.55}
+                fill={state.isFCT ? "#D4A843" : "#009639"}
+                opacity="0.15"
               >
-                FCT
-              </text>
-            )}
-          </g>
-        ))}
+                <animate
+                  attributeName="r"
+                  values={`${size * 0.55};${size * 0.95};${size * 0.55}`}
+                  dur={`${2 + (i % 5) * 0.3}s`}
+                  repeatCount="indefinite"
+                />
+                <animate
+                  attributeName="opacity"
+                  values="0.2;0.03;0.2"
+                  dur={`${2 + (i % 5) * 0.3}s`}
+                  repeatCount="indefinite"
+                />
+              </circle>
+
+              {/* Logo */}
+              <image
+                href="/images/Mask Group 3.svg"
+                x={state.x - size / 2}
+                y={state.y - size / 2}
+                width={size}
+                height={size}
+              />
+
+              {/* FCT label */}
+              {state.isFCT && (
+                <text
+                  x={state.x + size / 2 + 10}
+                  y={state.y + 14}
+                  fill="#D4A843"
+                  fontSize="48"
+                  fontWeight="bold"
+                  fontFamily="'DM Sans', sans-serif"
+                >
+                  FCT
+                </text>
+              )}
+            </g>
+          );
+        })}
       </svg>
 
-      {/* Legend — responsive layout */}
+      {/* Legend */}
       <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-6 mt-3 sm:mt-4">
         <div className="flex items-center gap-2 text-xs sm:text-sm">
-          <div className="w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full bg-[#009639]" />
+          <img src="/images/Mask Group 3.svg" alt="" className="w-4 h-4 sm:w-5 sm:h-5" />
           <span className="text-gray-500">Planned Hub (36 States)</span>
         </div>
         <div className="flex items-center gap-2 text-xs sm:text-sm">
-          <div className="w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full bg-[#D4A843]" />
+          <img src="/images/Mask Group 3.svg" alt="" className="w-5 h-5 sm:w-6 sm:h-6" />
           <span className="text-gray-500">FCT Headquarters</span>
         </div>
       </div>
