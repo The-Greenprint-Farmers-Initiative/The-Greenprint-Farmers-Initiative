@@ -10,7 +10,7 @@ const phases = [
     phase: "Phase 1",
     years: "2026 — 2031",
     title: "Foundation",
-    color: "#009639",
+    color: "#007D35",
     items: [
       "Establish first 6 pilot hubs across 3 geopolitical zones",
       "Build inaugural greenhouse complexes and processing factories",
@@ -24,7 +24,7 @@ const phases = [
     phase: "Phase 2",
     years: "2031 — 2036",
     title: "Scale",
-    color: "#D4A843",
+    color: "#E89B3C",
     items: [
       "Expand to 36 hubs covering all 6 geopolitical zones",
       "Achieve domestic food self-sufficiency in key crops",
@@ -61,19 +61,19 @@ export default function Roadmap() {
           transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
-          <span className="text-[#D4A843] text-sm font-bold tracking-[0.3em] uppercase">
+          <span className="text-[#E89B3C] text-sm font-bold tracking-[0.3em] uppercase">
             The Roadmap
           </span>
-          <h2 className="font-playfair text-3xl sm:text-4xl lg:text-5xl font-bold text-white mt-4 leading-tight">
+          <h2 className="font-playfair text-[#D67D1F]xl sm:text-[#D67D1F]xl lg:text-[#E89B3C]xl font-bold text-white mt-4 leading-tight">
             15 Years. Three Phases.
             <br />
-            <span className="text-[#D4A843]">One Transformed Nation.</span>
+            <span className="text-[#E89B3C]">One Transformed Nation.</span>
           </h2>
         </motion.div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 relative">
           {/* Connecting line (desktop) */}
-          <div className="hidden md:block absolute top-16 left-[16.67%] right-[16.67%] h-0.5 bg-gradient-to-r from-[#009639] via-[#D4A843] to-[#5dc004]" />
+          <div className="hidden md:block absolute top-16 left-[16.67%] right-[16.67%] h-0.5 bg-gradient-to-r from-[#007D35] via-[#E89B3C] to-[#5dc004]" />
 
           {phases.map((phase, i) => {
             const Icon = phase.icon;
@@ -83,7 +83,7 @@ export default function Roadmap() {
                 initial={{ opacity: 0, y: 40 }}
                 animate={inView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.6, delay: i * 0.2 }}
-                className="relative bg-white/5 border border-white/10 rounded-2xl p-8 hover:border-white/20 transition-all duration-500"
+                className="relative bg-white/60 border border-stone-200 rounded-2xl p-8 hover:border-white/20 transition-all duration-500"
               >
                 {/* Phase circle */}
                 <div
@@ -96,10 +96,10 @@ export default function Roadmap() {
                 <div className="text-xs font-bold tracking-[0.2em] uppercase mb-1" style={{ color: phase.color }}>
                   {phase.phase}
                 </div>
-                <h3 className="font-playfair text-xl sm:text-2xl font-bold text-white mb-1">
+                <h3 className="font-playfair text-xl sm:text-[#E89B3C]xl font-bold text-white mb-1">
                   {phase.title}
                 </h3>
-                <p className="text-white/40 text-sm font-space mb-6">
+                <p className="text-stone-500 text-sm font-space mb-6">
                   {phase.years}
                 </p>
 
@@ -107,7 +107,7 @@ export default function Roadmap() {
                   {phase.items.map((item, j) => (
                     <li key={j} className="flex items-start gap-3">
                       <div className="w-1.5 h-1.5 rounded-full mt-2 flex-shrink-0" style={{ backgroundColor: phase.color }} />
-                      <span className="text-white/60 text-sm leading-relaxed">{item}</span>
+                      <span className="text-stone-600 text-sm leading-relaxed">{item}</span>
                     </li>
                   ))}
                 </ul>

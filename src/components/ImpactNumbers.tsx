@@ -44,7 +44,7 @@ export default function ImpactNumbers() {
       id="impact"
       className="py-20 relative overflow-hidden"
       style={{
-        background: "linear-gradient(135deg, #0D3B0F 0%, #009639 100%)",
+        background: "linear-gradient(135deg, #0D3B0F 0%, #007D35 100%)",
       }}
       ref={ref}
     >
@@ -53,7 +53,7 @@ export default function ImpactNumbers() {
         {[...Array(15)].map((_, i) => (
           <div
             key={i}
-            className="absolute text-white/5 text-4xl"
+            className="absolute text-white/5 text-[#D67D1F]xl"
             style={{
               left: `${Math.random() * 100}%`,
               bottom: `-10%`,
@@ -73,10 +73,10 @@ export default function ImpactNumbers() {
           transition={{ duration: 0.8 }}
           className="text-center mb-12"
         >
-          <span className="text-white/60 text-sm font-bold tracking-[0.3em] uppercase">
+          <span className="text-stone-600 text-sm font-bold tracking-[0.3em] uppercase">
             Measurable Impact
           </span>
-          <h2 className="font-playfair text-3xl sm:text-4xl font-bold text-white mt-3">
+          <h2 className="font-playfair text-[#D67D1F]xl sm:text-[#D67D1F]xl font-bold text-white mt-3">
             Numbers That Change a Continent
           </h2>
         </motion.div>
@@ -90,10 +90,10 @@ export default function ImpactNumbers() {
               transition={{ duration: 0.6, delay: i * 0.1 }}
               className="group"
             >
-              <div className="font-space text-3xl sm:text-4xl lg:text-5xl font-bold text-[#D4A843]">
+              <div className="font-space text-[#D67D1F]xl sm:text-[#D67D1F]xl lg:text-[#E89B3C]xl font-bold text-[#E89B3C]">
                 {item.arrow ? (
                   <span>
-                    <span className="text-white/50 text-2xl line-through">
+                    <span className="text-stone-500 text-[#E89B3C]xl line-through">
                       {item.before}
                     </span>
                     <br />
@@ -116,7 +116,7 @@ export default function ImpactNumbers() {
                   </>
                 )}
               </div>
-              <div className="text-white/70 text-sm mt-3 uppercase tracking-wider">
+              <div className="text-stone-700 text-sm mt-3 uppercase tracking-wider">
                 {item.label}
               </div>
             </motion.div>

@@ -49,10 +49,10 @@ export default function WhoBenefits() {
           transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
-          <span className="text-[#009639] text-sm font-bold tracking-[0.3em] uppercase">
+          <span className="text-[#007D35] text-sm font-bold tracking-[0.3em] uppercase">
             Impact
           </span>
-          <h2 className="font-playfair text-3xl sm:text-4xl lg:text-5xl font-bold text-[#0D1B2A] mt-4 leading-tight">
+          <h2 className="font-playfair text-[#D67D1F]xl sm:text-[#D67D1F]xl lg:text-[#E89B3C]xl font-bold text-[#0D1B2A] mt-4 leading-tight">
             Who Benefits — And Why It Matters
           </h2>
         </motion.div>
@@ -66,10 +66,10 @@ export default function WhoBenefits() {
                 initial={{ opacity: 0, y: 40 }}
                 animate={inView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.6, delay: i * 0.15 }}
-                className="bg-gray-50 rounded-2xl p-8 border border-gray-100 hover:border-[#009639]/20 hover:shadow-lg transition-all duration-500"
+                className="bg-gray-50 rounded-2xl p-8 border border-gray-100 hover:border-[#007D35]/20 hover:shadow-lg transition-all duration-500"
               >
                 <div className="inline-flex items-center justify-center w-14 h-14 bg-[#E8F5E9] rounded-2xl mb-6">
-                  <Icon className="w-7 h-7 text-[#009639]" />
+                  <Icon className="w-7 h-7 text-[#007D35]" />
                 </div>
                 <h3 className="font-playfair text-xl font-bold text-[#0D1B2A] mb-6">
                   {b.title}
@@ -77,7 +77,7 @@ export default function WhoBenefits() {
                 <ul className="space-y-4">
                   {b.items.map((item, j) => (
                     <li key={j} className="flex items-start gap-3">
-                      <div className="w-1.5 h-1.5 rounded-full bg-[#D4A843] mt-2 flex-shrink-0" />
+                      <div className="w-1.5 h-1.5 rounded-full bg-[#E89B3C] mt-2 flex-shrink-0" />
                       <span className="text-gray-600 text-sm leading-relaxed">{item}</span>
                     </li>
                   ))}

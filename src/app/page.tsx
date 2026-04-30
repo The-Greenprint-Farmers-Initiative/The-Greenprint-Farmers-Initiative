@@ -1,28 +1,20 @@
-"use client";
-
 import Navbar from "@/components/Navbar";
-import Hero from "@/components/Hero";
-import TheProblem from "@/components/TheProblem";
-import Vision from "@/components/Vision";
-import Mission from "@/components/Mission";
-import Roadmap from "@/components/Roadmap";
-import WhoBenefits from "@/components/WhoBenefits";
-import Endorsement from "@/components/Endorsement";
-import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
+import HomeHero from "@/components/home/HomeHero";
+import HomeProblem from "@/components/home/HomeProblem";
+import HomeVision from "@/components/home/HomeVision";
+import HomeStats from "@/components/home/HomeStats";
+import HomeCTA from "@/components/home/HomeCTA";
 
 export default function Home() {
   return (
     <main>
       <Navbar />
-      <Hero />
-      <TheProblem />
-      <Vision />
-      <Mission />
-      <Roadmap />
-      <WhoBenefits />
-      <Endorsement />
-      <Contact />
+      <HomeHero />
+      <HomeProblem />
+      <HomeVision />
+      <HomeStats />
+      <HomeCTA />
       <Footer />
     </main>
   );

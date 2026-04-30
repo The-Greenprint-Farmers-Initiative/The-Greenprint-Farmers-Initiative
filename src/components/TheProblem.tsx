@@ -57,12 +57,12 @@ export default function TheProblem() {
           <span className="text-red-400 text-sm font-bold tracking-[0.3em] uppercase">
             The Crisis
           </span>
-          <h2 className="font-playfair text-3xl sm:text-4xl lg:text-5xl font-bold text-white mt-4 leading-tight">
+          <h2 className="font-playfair text-[#D67D1F]xl sm:text-[#D67D1F]xl lg:text-[#E89B3C]xl font-bold text-white mt-4 leading-tight">
             Africa Cannot Feed Itself.
             <br />
-            <span className="text-[#D4A843]">Yet.</span>
+            <span className="text-[#E89B3C]">Yet.</span>
           </h2>
-          <p className="mt-6 text-lg text-white/60 max-w-2xl mx-auto">
+          <p className="mt-6 text-lg text-stone-600 max-w-2xl mx-auto">
             The numbers tell a story of urgent need — and extraordinary opportunity.
           </p>
         </motion.div>
@@ -76,12 +76,12 @@ export default function TheProblem() {
                 initial={{ opacity: 0, y: 40 }}
                 animate={inView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.6, delay: i * 0.12 }}
-                className="bg-white/5 border border-white/10 rounded-2xl p-6 text-center hover:border-[#D4A843]/30 transition-all duration-500"
+                className="bg-white/60 border border-stone-200 rounded-2xl p-6 text-center hover:border-[#E89B3C]/30 transition-all duration-500"
               >
                 <div className="inline-flex items-center justify-center w-12 h-12 bg-red-500/10 rounded-xl mb-4">
                   <Icon className="w-6 h-6 text-red-400" />
                 </div>
-                <div className="font-space text-4xl font-bold text-[#D4A843] mb-2">
+                <div className="font-space text-[#D67D1F]xl font-bold text-[#E89B3C] mb-2">
                   {stat.prefix || ""}
                   {inView ? (
                     <CountUp
@@ -98,7 +98,7 @@ export default function TheProblem() {
                 <div className="text-white font-semibold text-sm mb-3">
                   {stat.label}
                 </div>
-                <p className="text-white/40 text-sm leading-relaxed">
+                <p className="text-stone-500 text-sm leading-relaxed">
                   {stat.description}
                 </p>
               </motion.div>

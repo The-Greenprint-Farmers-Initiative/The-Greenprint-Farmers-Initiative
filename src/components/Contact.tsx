@@ -38,13 +38,13 @@ export default function Contact() {
           transition={{ duration: 0.8 }}
           className="text-center mb-12"
         >
-          <span className="text-[#009639] text-sm font-bold tracking-[0.3em] uppercase">
+          <span className="text-[#007D35] text-sm font-bold tracking-[0.3em] uppercase">
             Stay Informed
           </span>
-          <h2 className="font-playfair text-3xl sm:text-4xl lg:text-5xl font-bold text-white mt-4">
+          <h2 className="font-playfair text-[#D67D1F]xl sm:text-[#D67D1F]xl lg:text-[#E89B3C]xl font-bold text-white mt-4">
             Join the Conversation
           </h2>
-          <p className="mt-4 text-white/50 text-lg max-w-xl mx-auto">
+          <p className="mt-4 text-stone-500 text-lg max-w-xl mx-auto">
             Whether you represent a government, institution, or are simply passionate
             about Africa&apos;s future — we welcome your enquiry.
           </p>
@@ -64,7 +64,7 @@ export default function Contact() {
             onChange={handleChange}
             placeholder="Your Name"
             required
-            className="bg-white/5 border border-white/10 rounded-xl px-5 py-3.5 text-white placeholder:text-white/30 focus:outline-none focus:border-[#009639] transition-colors"
+            className="bg-white/60 border border-stone-200 rounded-xl px-5 py-3.5 text-white placeholder:text-stone-400 focus:outline-none focus:border-[#007D35] transition-colors"
           />
           <input
             type="email"
@@ -73,7 +73,7 @@ export default function Contact() {
             onChange={handleChange}
             placeholder="Email Address"
             required
-            className="bg-white/5 border border-white/10 rounded-xl px-5 py-3.5 text-white placeholder:text-white/30 focus:outline-none focus:border-[#009639] transition-colors"
+            className="bg-white/60 border border-stone-200 rounded-xl px-5 py-3.5 text-white placeholder:text-stone-400 focus:outline-none focus:border-[#007D35] transition-colors"
           />
           <input
             type="text"
@@ -81,14 +81,14 @@ export default function Contact() {
             value={formData.organisation}
             onChange={handleChange}
             placeholder="Organisation / Institution"
-            className="bg-white/5 border border-white/10 rounded-xl px-5 py-3.5 text-white placeholder:text-white/30 focus:outline-none focus:border-[#009639] transition-colors"
+            className="bg-white/60 border border-stone-200 rounded-xl px-5 py-3.5 text-white placeholder:text-stone-400 focus:outline-none focus:border-[#007D35] transition-colors"
           />
           <select
             name="role"
             value={formData.role}
             onChange={handleChange}
             required
-            className="bg-white/5 border border-white/10 rounded-xl px-5 py-3.5 text-white focus:outline-none focus:border-[#009639] transition-colors appearance-none"
+            className="bg-white/60 border border-stone-200 rounded-xl px-5 py-3.5 text-white focus:outline-none focus:border-[#007D35] transition-colors appearance-none"
           >
             <option value="" disabled className="text-gray-900">Select Your Role</option>
             {roles.map((r) => (
@@ -102,12 +102,12 @@ export default function Contact() {
             placeholder="Your Message or Enquiry"
             rows={5}
             required
-            className="sm:col-span-2 bg-white/5 border border-white/10 rounded-xl px-5 py-3.5 text-white placeholder:text-white/30 focus:outline-none focus:border-[#009639] transition-colors resize-none"
+            className="sm:col-span-2 bg-white/60 border border-stone-200 rounded-xl px-5 py-3.5 text-white placeholder:text-stone-400 focus:outline-none focus:border-[#007D35] transition-colors resize-none"
           />
           <div className="sm:col-span-2 flex justify-center">
             <button
               type="submit"
-              className="flex items-center gap-2 bg-[#009639] hover:bg-[#007a2e] text-white font-semibold px-10 py-4 rounded-full transition-all duration-300 shadow-lg shadow-green-900/30 hover:shadow-xl"
+              className="flex items-center gap-2 bg-[#007D35] hover:bg-[#007a2e] text-white font-semibold px-10 py-4 rounded-full transition-all duration-300 shadow-lg shadow-green-900/30 hover:shadow-xl"
             >
               <Send className="w-5 h-5" />
               Send Enquiry
@@ -116,12 +116,12 @@ export default function Contact() {
         </motion.form>
 
         {/* Contact info */}
-        <div className="mt-16 flex flex-col sm:flex-row items-center justify-center gap-8 text-white/40">
-          <a href="mailto:info@greenprintfarmers.org" className="flex items-center gap-2 hover:text-[#D4A843] transition-colors">
+        <div className="mt-16 flex flex-col sm:flex-row items-center justify-center gap-8 text-stone-500">
+          <a href="mailto:info@greenprintfarmers.org" className="flex items-center gap-2 hover:text-[#E89B3C] transition-colors">
             <Mail className="w-4 h-4" />
             info@greenprintfarmers.org
           </a>
-          <a href="tel:+2340000000000" className="flex items-center gap-2 hover:text-[#D4A843] transition-colors">
+          <a href="tel:+2340000000000" className="flex items-center gap-2 hover:text-[#E89B3C] transition-colors">
             <Phone className="w-4 h-4" />
             +234 (0) 000 000 0000
           </a>
@@ -130,7 +130,7 @@ export default function Contact() {
         {/* Social */}
         <div className="mt-8 flex justify-center gap-6">
           {["X (Twitter)", "LinkedIn", "YouTube"].map((social) => (
-            <a key={social} href="#" className="text-white/25 hover:text-[#D4A843] transition-colors text-sm font-medium">
+            <a key={social} href="#" className="text-white/25 hover:text-[#E89B3C] transition-colors text-sm font-medium">
               {social}
             </a>
           ))}

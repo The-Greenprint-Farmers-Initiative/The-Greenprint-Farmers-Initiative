@@ -43,13 +43,13 @@ export default function Endorsement() {
           transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
-          <span className="text-[#D4A843] text-sm font-bold tracking-[0.3em] uppercase">
+          <span className="text-[#E89B3C] text-sm font-bold tracking-[0.3em] uppercase">
             Strategic Alignment
           </span>
-          <h2 className="font-playfair text-3xl sm:text-4xl lg:text-5xl font-bold text-white mt-4">
+          <h2 className="font-playfair text-[#D67D1F]xl sm:text-[#D67D1F]xl lg:text-[#E89B3C]xl font-bold text-white mt-4">
             Aligned with Africa&apos;s Frameworks
           </h2>
-          <p className="mt-6 text-lg text-white/50 max-w-2xl mx-auto">
+          <p className="mt-6 text-lg text-stone-500 max-w-2xl mx-auto">
             The Greenprint Farmers Initiative is designed to directly advance the
             continent&apos;s most important development agendas.
           </p>
@@ -63,13 +63,13 @@ export default function Endorsement() {
               initial={{ opacity: 0, scale: 0.8 }}
               animate={inView ? { opacity: 1, scale: 1 } : {}}
               transition={{ duration: 0.5, delay: 0.2 + i * 0.08 }}
-              className="bg-white/5 border border-white/10 rounded-2xl p-4 sm:p-6 text-center w-28 sm:w-40 hover:border-[#D4A843]/30 transition-all duration-500"
+              className="bg-white/60 border border-stone-200 rounded-2xl p-4 sm:p-6 text-center w-28 sm:w-40 hover:border-[#E89B3C]/30 transition-all duration-500"
             >
-              <div className="font-space text-2xl font-bold text-[#D4A843] mb-2">
+              <div className="font-space text-[#E89B3C]xl font-bold text-[#E89B3C] mb-2">
                 {item.abbr}
               </div>
-              <div className="text-white/80 text-xs font-semibold mb-1">{item.name}</div>
-              <div className="text-white/30 text-[10px] leading-tight">{item.description}</div>
+              <div className="text-stone-700 text-xs font-semibold mb-1">{item.name}</div>
+              <div className="text-stone-400 text-[10px] leading-tight">{item.description}</div>
             </motion.div>
           ))}
         </div>
@@ -81,8 +81,8 @@ export default function Endorsement() {
           transition={{ duration: 0.8, delay: 0.4 }}
           className="max-w-3xl mx-auto text-center"
         >
-          <div className="text-[#D4A843] text-6xl font-playfair leading-none mb-4">&ldquo;</div>
-          <blockquote className="font-playfair text-xl sm:text-2xl text-white/90 leading-relaxed italic">
+          <div className="text-[#E89B3C] text-6xl font-playfair leading-none mb-4">&ldquo;</div>
+          <blockquote className="font-playfair text-xl sm:text-[#E89B3C]xl text-stone-800 leading-relaxed italic">
             Nigeria has the land, the labour, the climate, and the commodities.
             What it needs is a bold, structured, and investable framework to
             unlock its agro-industrial potential. The Greenprint Farmers Initiative
@@ -90,7 +90,7 @@ export default function Endorsement() {
           </blockquote>
           <div className="mt-8">
             <div className="font-bold text-white">Founders</div>
-            <div className="text-sm text-white/40">
+            <div className="text-sm text-stone-500">
               The Greenprint Farmers Initiative
             </div>
           </div>

@@ -41,13 +41,13 @@ export default function Vision() {
           transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
-          <span className="text-[#009639] text-sm font-bold tracking-[0.3em] uppercase">
+          <span className="text-[#007D35] text-sm font-bold tracking-[0.3em] uppercase">
             Our Vision
           </span>
-          <h2 className="font-playfair text-3xl sm:text-4xl lg:text-5xl font-bold text-[#0D1B2A] mt-4 leading-tight">
+          <h2 className="font-playfair text-[#D67D1F]xl sm:text-[#D67D1F]xl lg:text-[#E89B3C]xl font-bold text-[#0D1B2A] mt-4 leading-tight">
             Three Pillars of
             <br />
-            <span className="text-[#009639]">Continental Transformation</span>
+            <span className="text-[#007D35]">Continental Transformation</span>
           </h2>
           <p className="mt-6 text-lg text-gray-600 max-w-3xl mx-auto">
             The Greenprint Farmers Initiative envisions an Africa where no nation depends
@@ -77,10 +77,10 @@ export default function Vision() {
                     sizes="(max-width: 768px) 100vw, 33vw"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
-                  <div className="absolute bottom-4 left-4 bg-[#009639] text-white p-2.5 rounded-xl shadow-lg">
+                  <div className="absolute bottom-4 left-4 bg-[#007D35] text-white p-2.5 rounded-xl shadow-lg">
                     <Icon className="w-5 h-5" />
                   </div>
-                  <span className="absolute bottom-2 right-3 text-white/40 text-[9px] italic">
+                  <span className="absolute bottom-2 right-3 text-stone-500 text-[9px] italic">
                     Artist&apos;s render of planned facility
                   </span>
                 </div>

@@ -1,143 +1,135 @@
 "use client";
 
-import { useState, useEffect } from "react";
-import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X } from "lucide-react";
+import Link from "next/link";
 import Image from "next/image";
+import { useEffect, useState } from "react";
+import { usePathname } from "next/navigation";
+import { Menu, X } from "lucide-react";
 
-const navLinks = [
-  { label: "The Vision", href: "#vision" },
-  { label: "Our Mission", href: "#mission" },
-  { label: "Roadmap", href: "#roadmap" },
-  { label: "Impact", href: "#benefits" },
-  { label: "Contact", href: "#contact" },
+const links = [
+  { href: "/", label: "Home" },
+  { href: "/about", label: "About" },
+  { href: "/hub", label: "The Hub" },
+  { href: "/plan", label: "The Plan" },
+  { href: "/stay-informed", label: "Stay Informed" },
 ];
 
 export default function Navbar() {
+  const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-  const [mobileOpen, setMobileOpen] = useState(false);
+  const pathname = usePathname();
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 50);
+    const onScroll = () => setScrolled(window.scrollY > 30);
     window.addEventListener("scroll", onScroll);
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
+
+  useEffect(() => setOpen(false), [pathname]);
 
   return (
     <>
       <nav
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-          scrolled
-            ? "bg-[#0D1B2A]/95 backdrop-blur-md shadow-lg"
-            : "bg-transparent"
+          scrolled ? "nav-blur py-3" : "py-6 bg-transparent"
         }`}
       >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-between h-20">
-            {/* Logo */}
-            <a href="#" className="flex items-center gap-2 group">
+        <div className="max-w-7xl mx-auto px-6 sm:px-8 flex items-center justify-between">
+          <Link href="/" className="flex items-center gap-3 group">
+            <div className="relative w-9 h-9">
               <Image
                 src="/images/Mask Group 3.svg"
-                alt="The Greenprint Farmers Initiative"
-                width={48}
-                height={48}
-                className="h-12 w-12 transition-transform group-hover:scale-105"
-                priority
+                alt="Greenprint"
+                fill
+                className="object-contain"
               />
-              <div className="hidden sm:block">
-                <span className="text-white font-bold text-sm tracking-wide">
-                  GREENPRINT
-                </span>
-                <span className="block text-[#5dc004] text-[11px] font-bold tracking-wider">
-                  FARMERS INITIATIVE
-                </span>
+            </div>
+            <div className="leading-tight">
+              <div className="font-serif text-[15px] font-medium text-[#F2EDE2] tracking-[0.04em]">
+                Greenprint
               </div>
-            </a>
+              <div className="text-[9px] text-[#C9A961] uppercase tracking-[0.24em] font-medium">
+                Farmers Initiative
+              </div>
+            </div>
+          </Link>
 
-            {/* Desktop nav */}
-            <div className="hidden lg:flex items-center gap-8">
-              {navLinks.map((link) => (
-                <a
-                  key={link.label}
+          <div className="hidden lg:flex items-center gap-8">
+            {links.map((link) => {
+              const active = pathname === link.href;
+              return (
+                <Link
+                  key={link.href}
                   href={link.href}
-                  className="text-white/80 hover:text-[#D4A843] text-sm font-medium tracking-wide transition-colors duration-300 uppercase"
+                  className={`text-[13px] font-medium tracking-wide transition-colors ${
+                    active
+                      ? "text-[#F2EDE2]"
+                      : "text-[#F2EDE2]/55 hover:text-[#F2EDE2]"
+                  }`}
                 >
                   {link.label}
-                </a>
-              ))}
-              <a
-                href="#contact"
-                className="bg-[#009639] hover:bg-[#007a2e] text-white text-sm font-semibold px-5 py-2.5 rounded-full transition-all duration-300 hover:shadow-lg hover:shadow-green-900/30"
-              >
-                Stay Informed
-              </a>
-            </div>
-
-            {/* Mobile hamburger */}
-            <button
-              className="lg:hidden text-white p-2"
-              onClick={() => setMobileOpen(!mobileOpen)}
-              aria-label="Toggle menu"
-            >
-              {mobileOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-            </button>
+                </Link>
+              );
+            })}
           </div>
+
+          <div className="hidden lg:block">
+            <Link
+              href="/stay-informed"
+              className="text-[13px] font-medium text-[#F2EDE2] border border-[#C9A961]/30 hover:border-[#C9A961] hover:bg-[#C9A961]/5 px-5 py-2 transition-all duration-300"
+            >
+              Get Involved
+            </Link>
+          </div>
+
+          <button
+            onClick={() => setOpen(!open)}
+            className="lg:hidden text-[#F2EDE2] p-2"
+            aria-label="Toggle menu"
+          >
+            {open ? <X size={20} /> : <Menu size={20} />}
+          </button>
         </div>
       </nav>
 
-      {/* Mobile drawer */}
-      <AnimatePresence>
-        {mobileOpen && (
-          <motion.div
-            initial={{ x: "100%" }}
-            animate={{ x: 0 }}
-            exit={{ x: "100%" }}
-            transition={{ type: "tween", duration: 0.3 }}
-            className="fixed inset-y-0 right-0 w-80 bg-[#0D1B2A] z-50 shadow-2xl lg:hidden"
-          >
-            <div className="flex justify-end p-6">
-              <button onClick={() => setMobileOpen(false)} className="text-white" aria-label="Close menu">
-                <X className="w-6 h-6" />
-              </button>
-            </div>
-            <div className="flex flex-col gap-6 px-8">
-              {navLinks.map((link, i) => (
-                <motion.a
-                  key={link.label}
+      <div
+        className={`fixed inset-0 z-40 lg:hidden transition-opacity duration-300 ${
+          open ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
+        }`}
+      >
+        <div
+          className="absolute inset-0 bg-[#0A0E13]/95 backdrop-blur-md"
+          onClick={() => setOpen(false)}
+        />
+        <div
+          className={`absolute right-0 top-0 h-full w-80 bg-[#0A0E13] border-l border-[#F2EDE2]/10 p-10 pt-24 transition-transform duration-500 ${
+            open ? "translate-x-0" : "translate-x-full"
+          }`}
+        >
+          <div className="flex flex-col gap-1">
+            {links.map((link) => {
+              const active = pathname === link.href;
+              return (
+                <Link
+                  key={link.href}
                   href={link.href}
-                  initial={{ opacity: 0, x: 20 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ delay: i * 0.05 }}
-                  onClick={() => setMobileOpen(false)}
-                  className="text-white/80 hover:text-[#D4A843] text-lg font-medium tracking-wide uppercase transition-colors"
+                  className={`py-4 border-b border-[#F2EDE2]/8 text-base font-medium transition-colors ${
+                    active ? "text-[#C9A961]" : "text-[#F2EDE2]/70 hover:text-[#F2EDE2]"
+                  }`}
                 >
                   {link.label}
-                </motion.a>
-              ))}
-              <a
-                href="#contact"
-                onClick={() => setMobileOpen(false)}
-                className="flex items-center justify-center bg-[#009639] text-white font-semibold px-5 py-3 rounded-full mt-4"
-              >
-                Stay Informed
-              </a>
-            </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
-
-      {/* Overlay */}
-      <AnimatePresence>
-        {mobileOpen && (
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            onClick={() => setMobileOpen(false)}
-            className="fixed inset-0 bg-black/60 z-40 lg:hidden"
-          />
-        )}
-      </AnimatePresence>
+                </Link>
+              );
+            })}
+            <Link
+              href="/stay-informed"
+              className="mt-8 py-3 px-5 text-center text-[13px] font-medium text-[#F2EDE2] border border-[#C9A961]/40"
+            >
+              Get Involved
+            </Link>
+          </div>
+        </div>
+      </div>
     </>
   );
 }

@@ -52,10 +52,10 @@ export default function SoillessFarming() {
           transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
-          <span className="text-[#009639] text-sm font-bold tracking-[0.3em] uppercase">
+          <span className="text-[#007D35] text-sm font-bold tracking-[0.3em] uppercase">
             Modern Technology
           </span>
-          <h2 className="font-playfair text-3xl sm:text-4xl lg:text-5xl font-bold text-[#0D1B2A] mt-4">
+          <h2 className="font-playfair text-[#D67D1F]xl sm:text-[#D67D1F]xl lg:text-[#E89B3C]xl font-bold text-[#0D1B2A] mt-4">
             The Future is Soilless
           </h2>
           <p className="mt-4 text-xl text-[#0D1B2A]/70 font-space font-medium">
@@ -85,7 +85,7 @@ export default function SoillessFarming() {
                     sizes="(max-width: 768px) 100vw, 33vw"
                   />
                   {/* Icon badge */}
-                  <div className="absolute top-4 left-4 bg-[#009639] text-white p-2.5 rounded-xl shadow-lg">
+                  <div className="absolute top-4 left-4 bg-[#007D35] text-white p-2.5 rounded-xl shadow-lg">
                     <Icon className="w-5 h-5" />
                   </div>
                 </div>
@@ -101,7 +101,7 @@ export default function SoillessFarming() {
 
                   {/* Animated stat */}
                   <div className="mt-5 pt-5 border-t border-gray-100">
-                    <div className="font-space text-2xl font-bold text-[#009639]">
+                    <div className="font-space text-[#E89B3C]xl font-bold text-[#007D35]">
                       {method.statNum > 0 && inView ? (
                         <CountUp
                           end={method.statNum}

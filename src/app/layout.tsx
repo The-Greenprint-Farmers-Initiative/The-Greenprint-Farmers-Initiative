@@ -2,17 +2,15 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "The Greenprint Farmers Initiative — Feeding Africa. Growing Prosperity. Planting the Future.",
+  title: "The Greenprint Farmers Initiative",
   description:
-    "A 15-year, $8.7 billion vision to build 72 agro-industrial hubs across Nigeria's 36 states — creating 2.4 million jobs, planting 500 million trees, and transforming Africa's food systems.",
+    "A 15-year, $8.7 billion vision to build 72 agro-industrial hubs across Nigeria's 36 states.",
   keywords: [
     "Greenprint Farmers Initiative",
     "Nigeria agriculture",
     "food sovereignty",
     "African Union",
     "Agenda 2063",
-    "reforestation",
-    "agro-industrial",
   ],
   openGraph: {
     title: "The Greenprint Farmers Initiative",
@@ -24,9 +22,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+}: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en" className="h-full antialiased">
       <head>
@@ -34,7 +30,7 @@ export default function RootLayout({
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link
-          href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,700&family=DM+Sans:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+          href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT,WONK@0,9..144,300..700,0..100,0..1;1,9..144,300..700,0..100,0..1&family=Inter:wght@300..700&display=swap"
           rel="stylesheet"
         />
       </head>

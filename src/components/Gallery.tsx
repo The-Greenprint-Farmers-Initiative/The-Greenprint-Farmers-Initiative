@@ -31,10 +31,10 @@ export default function Gallery() {
           transition={{ duration: 0.8 }}
           className="text-center mb-12"
         >
-          <span className="text-[#009639] text-sm font-bold tracking-[0.3em] uppercase">
+          <span className="text-[#007D35] text-sm font-bold tracking-[0.3em] uppercase">
             Visualising the Future
           </span>
-          <h2 className="font-playfair text-3xl sm:text-4xl lg:text-5xl font-bold text-[#0D1B2A] mt-4">
+          <h2 className="font-playfair text-[#D67D1F]xl sm:text-[#D67D1F]xl lg:text-[#E89B3C]xl font-bold text-[#0D1B2A] mt-4">
             Architectural Renders
           </h2>
           <p className="mt-4 text-gray-500 text-sm italic">
@@ -64,7 +64,7 @@ export default function Gallery() {
               <div className="absolute inset-0 bg-black/0 group-hover:bg-black/30 transition-all duration-300 flex items-end">
                 <div className="p-4 w-full transform translate-y-full group-hover:translate-y-0 transition-transform duration-300">
                   <span className="text-white text-sm font-medium">{img.alt}</span>
-                  <span className="block text-white/50 text-[10px] italic mt-1">Artist&apos;s render</span>
+                  <span className="block text-stone-500 text-[10px] italic mt-1">Artist&apos;s render</span>
                 </div>
               </div>
             </motion.div>
@@ -82,13 +82,13 @@ export default function Gallery() {
             className="fixed inset-0 bg-black/95 z-50 flex items-center justify-center p-4"
             onClick={closeLightbox}
           >
-            <button onClick={closeLightbox} className="absolute top-6 right-6 text-white/70 hover:text-white z-50" aria-label="Close">
+            <button onClick={closeLightbox} className="absolute top-6 right-6 text-stone-700 hover:text-white z-50" aria-label="Close">
               <X className="w-8 h-8" />
             </button>
-            <button onClick={(e) => { e.stopPropagation(); prev(); }} className="absolute left-4 sm:left-8 text-white/70 hover:text-white z-50" aria-label="Previous">
+            <button onClick={(e) => { e.stopPropagation(); prev(); }} className="absolute left-4 sm:left-8 text-stone-700 hover:text-white z-50" aria-label="Previous">
               <ChevronLeft className="w-10 h-10" />
             </button>
-            <button onClick={(e) => { e.stopPropagation(); next(); }} className="absolute right-4 sm:right-8 text-white/70 hover:text-white z-50" aria-label="Next">
+            <button onClick={(e) => { e.stopPropagation(); next(); }} className="absolute right-4 sm:right-8 text-stone-700 hover:text-white z-50" aria-label="Next">
               <ChevronRight className="w-10 h-10" />
             </button>
             <motion.div
@@ -107,7 +107,7 @@ export default function Gallery() {
                 sizes="100vw"
               />
               <p className="text-white text-center mt-4 font-medium">{images[lightbox].alt}</p>
-              <p className="text-white/40 text-center text-xs italic">Artist&apos;s render of planned facility</p>
+              <p className="text-stone-500 text-center text-xs italic">Artist&apos;s render of planned facility</p>
             </motion.div>
           </motion.div>
         )}

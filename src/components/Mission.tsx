@@ -27,11 +27,11 @@ export default function Mission() {
           >
             <div className="relative pl-4 sm:pl-8">
               {/* Gold accent line */}
-              <div className="absolute left-0 top-0 bottom-0 w-1 bg-[#D4A843] rounded-full" />
-              <span className="text-[#009639] text-sm font-bold tracking-[0.3em] uppercase">
+              <div className="absolute left-0 top-0 bottom-0 w-1 bg-[#E89B3C] rounded-full" />
+              <span className="text-[#007D35] text-sm font-bold tracking-[0.3em] uppercase">
                 Our Mission
               </span>
-              <h2 className="font-playfair text-3xl sm:text-4xl lg:text-5xl font-bold text-[#0D1B2A] mt-4 leading-tight">
+              <h2 className="font-playfair text-[#D67D1F]xl sm:text-[#D67D1F]xl lg:text-[#E89B3C]xl font-bold text-[#0D1B2A] mt-4 leading-tight">
                 72 Integrated Hubs Across Every State in Nigeria
               </h2>
               <p className="mt-6 text-lg text-gray-600 leading-relaxed">
@@ -57,7 +57,7 @@ export default function Mission() {
                   transition={{ duration: 0.5, delay: 0.4 + i * 0.1 }}
                   className="text-center bg-white rounded-xl p-4 shadow-sm border border-gray-100"
                 >
-                  <div className="font-space text-2xl font-bold text-[#009639]">
+                  <div className="font-space text-[#E89B3C]xl font-bold text-[#007D35]">
                     {inView ? (
                       <CountUp
                         end={stat.value}

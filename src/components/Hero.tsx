@@ -77,16 +77,16 @@ export default function Hero() {
             transition={{ duration: 0.6, ease: "easeOut" }}
             className="max-w-5xl"
           >
-            <h1 className="font-playfair text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-bold text-white leading-tight whitespace-pre-line">
+            <h1 className="font-playfair text-[#D67D1F]xl sm:text-[#D67D1F]xl md:text-[#E89B3C]xl lg:text-[#E89B3C]xl font-bold text-white leading-tight whitespace-pre-line">
               {slides[current].headline}
             </h1>
-            <p className="mt-6 text-lg sm:text-xl text-[#D4A843] italic font-playfair">
+            <p className="mt-6 text-lg sm:text-xl text-[#E89B3C] italic font-playfair">
               {slides[current].sub}
             </p>
             <div className="mt-10">
               <a
                 href="#problem"
-                className="inline-flex items-center gap-2 border-2 border-[#D4A843] text-[#D4A843] hover:bg-[#D4A843] hover:text-[#0D1B2A] px-6 sm:px-10 py-3 sm:py-4 rounded-full font-semibold text-base sm:text-lg transition-all duration-300"
+                className="inline-flex items-center gap-2 border-2 border-[#E89B3C] text-[#E89B3C] hover:bg-[#E89B3C] hover:text-[#0D1B2A] px-6 sm:px-10 py-3 sm:py-4 rounded-full font-semibold text-base sm:text-lg transition-all duration-300"
               >
                 Discover the Vision
               </a>
@@ -101,7 +101,7 @@ export default function Hero() {
               key={i}
               onClick={() => setCurrent(i)}
               className={`w-3 h-3 rounded-full transition-all duration-300 ${
-                i === current ? "bg-[#D4A843] scale-125" : "bg-white/40 hover:bg-white/70"
+                i === current ? "bg-[#E89B3C] scale-125" : "bg-white/40 hover:bg-white/800"
               }`}
               aria-label={`Go to slide ${i + 1}`}
             />
@@ -110,12 +110,12 @@ export default function Hero() {
 
         {/* Scroll indicator */}
         <div className="absolute bottom-10 animate-bounce-slow z-10">
-          <ChevronDown className="w-8 h-8 text-white/70" />
+          <ChevronDown className="w-8 h-8 text-stone-700" />
         </div>
       </div>
 
       {/* Caption */}
-      <div className="absolute bottom-2 right-4 z-10 text-white/30 text-[10px] italic">
+      <div className="absolute bottom-2 right-4 z-10 text-stone-400 text-[10px] italic">
         Artist&apos;s render of planned facility
       </div>
     </section>

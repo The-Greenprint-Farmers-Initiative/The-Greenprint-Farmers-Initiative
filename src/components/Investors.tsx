@@ -51,13 +51,13 @@ export default function Investors() {
           transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
-          <span className="text-[#009639] text-sm font-bold tracking-[0.3em] uppercase">
+          <span className="text-[#007D35] text-sm font-bold tracking-[0.3em] uppercase">
             Investment Opportunity
           </span>
-          <h2 className="font-playfair text-3xl sm:text-4xl lg:text-5xl font-bold text-[#0D1B2A] mt-4">
+          <h2 className="font-playfair text-[#D67D1F]xl sm:text-[#D67D1F]xl lg:text-[#E89B3C]xl font-bold text-[#0D1B2A] mt-4">
             Revenue from Month 3.
             <br />
-            <span className="text-[#009639]">Cash-Flow Positive by Month 6.</span>
+            <span className="text-[#007D35]">Cash-Flow Positive by Month 6.</span>
           </h2>
           <p className="mt-4 font-space text-lg text-[#0D1B2A]/70">
             Phase 1A: $65 Million | 3 Hubs | 22-28% Projected IRR
@@ -114,7 +114,7 @@ export default function Investors() {
                   />
                   <Bar
                     dataKey="revenue"
-                    fill="#009639"
+                    fill="#007D35"
                     radius={[4, 4, 0, 0]}
                     maxBarSize={40}
                   />
@@ -142,7 +142,7 @@ export default function Investors() {
                   transition={{ duration: 0.5, delay: 0.5 + i * 0.1 }}
                   className="flex items-start gap-3"
                 >
-                  <CheckCircle className="w-5 h-5 text-[#D4A843] mt-0.5 flex-shrink-0" />
+                  <CheckCircle className="w-5 h-5 text-[#E89B3C] mt-0.5 flex-shrink-0" />
                   <span className="text-[#0D1B2A] font-medium">{metric}</span>
                 </motion.div>
               ))}
@@ -152,14 +152,14 @@ export default function Investors() {
             <div className="mt-10 flex flex-col sm:flex-row gap-4">
               <a
                 href="#contact"
-                className="flex items-center justify-center gap-2 bg-[#D4A843] hover:bg-[#c4983a] text-white font-semibold px-6 py-3 rounded-full transition-all duration-300 shadow-lg"
+                className="flex items-center justify-center gap-2 bg-[#E89B3C] hover:bg-[#c4983a] text-white font-semibold px-6 py-3 rounded-full transition-all duration-300 shadow-lg"
               >
                 <Download className="w-4 h-4" />
                 Download Investor Memo
               </a>
               <a
                 href="#contact"
-                className="flex items-center justify-center gap-2 bg-[#009639] hover:bg-[#007a2e] text-white font-semibold px-6 py-3 rounded-full transition-all duration-300 shadow-lg"
+                className="flex items-center justify-center gap-2 bg-[#007D35] hover:bg-[#007a2e] text-white font-semibold px-6 py-3 rounded-full transition-all duration-300 shadow-lg"
               >
                 <Calendar className="w-4 h-4" />
                 Request Meeting

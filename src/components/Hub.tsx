@@ -74,13 +74,13 @@ export default function Hub() {
           transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
-          <span className="text-[#009639] text-sm font-bold tracking-[0.3em] uppercase">
+          <span className="text-[#007D35] text-sm font-bold tracking-[0.3em] uppercase">
             Inside the Hub
           </span>
-          <h2 className="font-playfair text-3xl sm:text-4xl lg:text-5xl font-bold text-white mt-4 leading-tight">
+          <h2 className="font-playfair text-[#D67D1F]xl sm:text-[#D67D1F]xl lg:text-[#E89B3C]xl font-bold text-white mt-4 leading-tight">
             A 500-Hectare Integrated
             <br />
-            <span className="text-[#D4A843]">Agro-Industrial Complex</span>
+            <span className="text-[#E89B3C]">Agro-Industrial Complex</span>
           </h2>
         </motion.div>
 
@@ -109,11 +109,11 @@ export default function Hub() {
               <div className="absolute bottom-0 left-0 right-0 p-6 transform transition-all duration-500">
                 <div className="flex items-center justify-between mb-2">
                   <h3 className="text-white font-bold text-xl">{card.title}</h3>
-                  <span className="bg-[#009639] text-white text-xs font-bold px-3 py-1 rounded-full">
+                  <span className="bg-[#007D35] text-white text-xs font-bold px-3 py-1 rounded-full">
                     {card.size}
                   </span>
                 </div>
-                <p className="text-white/0 group-hover:text-white/90 text-sm leading-relaxed transition-all duration-500 transform translate-y-4 group-hover:translate-y-0">
+                <p className="text-white/0 group-hover:text-stone-800 text-sm leading-relaxed transition-all duration-500 transform translate-y-4 group-hover:translate-y-0">
                   {card.description}
                 </p>
               </div>
