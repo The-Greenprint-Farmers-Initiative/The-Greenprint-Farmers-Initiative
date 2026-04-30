@@ -45,11 +45,21 @@ export default function StayForm() {
           <div className="lg:col-span-4 space-y-8">
             <div>
               <div className="text-[11px] uppercase tracking-[0.22em] text-[#C9A961] font-medium mb-2">Email</div>
-              <div className="font-serif text-lg text-[#F2EDE2]">kilimanjarohub@gmail.com</div>
+              <a href="mailto:contact@greenprintfarmers.org" className="font-serif text-lg text-[#F2EDE2] hover:text-[#C9A961] transition-colors">
+                contact@greenprintfarmers.org
+              </a>
+            </div>
+            <div>
+              <div className="text-[11px] uppercase tracking-[0.22em] text-[#C9A961] font-medium mb-2">Telephone</div>
+              <a href="tel:+2348066731036" className="font-serif text-lg text-[#F2EDE2] hover:text-[#C9A961] transition-colors">
+                +234 806 673 1036
+              </a>
             </div>
             <div>
               <div className="text-[11px] uppercase tracking-[0.22em] text-[#C9A961] font-medium mb-2">Headquarters</div>
-              <div className="font-serif text-lg text-[#F2EDE2]">Abuja, Federal Capital Territory, Nigeria</div>
+              <div className="font-serif text-lg text-[#F2EDE2] leading-snug">
+                153 Green City Estate<br />Gwarinpa, Abuja<br />Nigeria
+              </div>
             </div>
             <div>
               <div className="text-[11px] uppercase tracking-[0.22em] text-[#C9A961] font-medium mb-2">Response time</div>

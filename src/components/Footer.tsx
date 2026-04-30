@@ -45,18 +45,22 @@ export default function Footer() {
 
           <div className="md:col-span-4">
             <div className="eyebrow mb-5">Contact</div>
-            <div className="space-y-3 text-sm text-[#F2EDE2]/65">
+            <div className="space-y-4 text-sm text-[#F2EDE2]/65">
               <div>
-                <div className="text-[11px] uppercase tracking-wider text-[#F2EDE2]/40 mb-0.5">Email</div>
-                <div>kilimanjarohub@gmail.com</div>
+                <div className="text-[11px] uppercase tracking-wider text-[#F2EDE2]/40 mb-1">Email</div>
+                <a href="mailto:contact@greenprintfarmers.org" className="hover:text-[#F2EDE2] transition-colors">
+                  contact@greenprintfarmers.org
+                </a>
               </div>
               <div>
-                <div className="text-[11px] uppercase tracking-wider text-[#F2EDE2]/40 mb-0.5">Headquarters</div>
-                <div>Abuja, Federal Capital Territory, Nigeria</div>
+                <div className="text-[11px] uppercase tracking-wider text-[#F2EDE2]/40 mb-1">Telephone</div>
+                <a href="tel:+2348066731036" className="hover:text-[#F2EDE2] transition-colors">
+                  +234 806 673 1036
+                </a>
               </div>
               <div>
-                <div className="text-[11px] uppercase tracking-wider text-[#F2EDE2]/40 mb-0.5">Aligned with</div>
-                <div>African Union · Agenda 2063</div>
+                <div className="text-[11px] uppercase tracking-wider text-[#F2EDE2]/40 mb-1">Headquarters</div>
+                <div>153 Green City Estate<br />Gwarinpa, Abuja<br />Nigeria</div>
               </div>
             </div>
           </div>
