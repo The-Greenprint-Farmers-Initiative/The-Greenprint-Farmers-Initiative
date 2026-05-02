@@ -48,8 +48,8 @@ export default function Footer() {
             <div className="space-y-4 text-sm text-[#F2EDE2]/65">
               <div>
                 <div className="text-[11px] uppercase tracking-wider text-[#F2EDE2]/40 mb-1">Email</div>
-                <a href="mailto:contact@greenprintfarmers.org" className="hover:text-[#F2EDE2] transition-colors">
-                  contact@greenprintfarmers.org
+                <a href="mailto:info@greenprintfarmers.org" className="hover:text-[#F2EDE2] transition-colors">
+                  info@greenprintfarmers.org
                 </a>
               </div>
               <div>

@@ -45,8 +45,8 @@ export default function StayForm() {
           <div className="lg:col-span-4 space-y-8">
             <div>
               <div className="text-[11px] uppercase tracking-[0.22em] text-[#C9A961] font-medium mb-2">Email</div>
-              <a href="mailto:contact@greenprintfarmers.org" className="font-serif text-lg text-[#F2EDE2] hover:text-[#C9A961] transition-colors">
-                contact@greenprintfarmers.org
+              <a href="mailto:info@greenprintfarmers.org" className="font-serif text-lg text-[#F2EDE2] hover:text-[#C9A961] transition-colors">
+                info@greenprintfarmers.org
               </a>
             </div>
             <div>
