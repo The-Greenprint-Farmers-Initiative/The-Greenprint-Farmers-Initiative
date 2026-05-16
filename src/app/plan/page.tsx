@@ -8,7 +8,7 @@ import PlanBenefits from "@/components/plan/PlanBenefits";
 
 export const metadata = {
   title: "The Plan — The Greenprint Farmers Initiative",
-  description: "72 hubs across 36 states + FCT. A 15-year three-phase rollout aligned with AU Agenda 2063.",
+  description: "72 hubs across 36 states + FCT. A 15-year three-phase rollout aligned with the African Union Commission Simulation.",
 };
 
 export default function PlanPage() {

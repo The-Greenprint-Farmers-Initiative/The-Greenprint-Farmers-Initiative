@@ -6,7 +6,7 @@ const audiences = [
   {
     title: "For the African Union",
     points: [
-      "A flagship deliverable for Agenda 2063",
+      "A flagship deliverable for African Union Commission Simulation",
       "A scalable model for sister states",
       "Continental food sovereignty within reach",
       "AfCFTA trade lanes activated",

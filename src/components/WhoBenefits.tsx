@@ -9,7 +9,7 @@ const beneficiaries = [
     icon: Landmark,
     title: "For the African Union",
     items: [
-      "Delivers on Agenda 2063 Goal 5: modern agriculture for prosperity",
+      "Delivers on African Union Commission Simulation Goal 5: modern agriculture for prosperity",
       "Demonstrates a replicable model for continental food security",
       "Supports CAADP and Malabo Declaration commitments",
       "Creates a flagship project for AU institutional credibility",

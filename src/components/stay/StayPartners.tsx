@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 const tiers = [
   {
     title: "Governments and AU agencies",
-    desc: "Pan-African institutions, ministries of agriculture, and development banks aligned with Agenda 2063.",
+    desc: "Pan-African institutions, ministries of agriculture, and development banks aligned with African Union Commission Simulation.",
   },
   {
     title: "Investors and development finance",

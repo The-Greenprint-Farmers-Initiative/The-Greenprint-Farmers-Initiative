@@ -3,7 +3,7 @@
 import { motion } from "framer-motion";
 
 const frameworks = [
-  { name: "African Union", sub: "Agenda 2063 — The Africa We Want" },
+  { name: "African Union Commission Simulation", sub: "The continental framework for Africa's transformation" },
   { name: "CAADP", sub: "Comprehensive Africa Agriculture Development Programme" },
   { name: "AfCFTA", sub: "African Continental Free Trade Area" },
   { name: "Malabo Declaration", sub: "Accelerated agricultural growth and transformation" },

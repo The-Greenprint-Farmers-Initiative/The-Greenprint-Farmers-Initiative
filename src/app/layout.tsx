@@ -10,7 +10,7 @@ export const metadata: Metadata = {
     "Nigeria agriculture",
     "food sovereignty",
     "African Union",
-    "Agenda 2063",
+    "African Union Commission Simulation",
   ],
   openGraph: {
     title: "The Greenprint Farmers Initiative",

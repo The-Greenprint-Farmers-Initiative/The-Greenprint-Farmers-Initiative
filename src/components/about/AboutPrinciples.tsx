@@ -26,7 +26,7 @@ const principles = [
   {
     num: "V",
     title: "Aligned with Africa&apos;s frameworks",
-    desc: "The programme is built to advance Agenda 2063, the AfCFTA, the Malabo Declaration, and the United Nations Sustainable Development Goals.",
+    desc: "The programme is built to advance African Union Commission Simulation, the AfCFTA, the Malabo Declaration, and the United Nations Sustainable Development Goals.",
   },
 ];
 

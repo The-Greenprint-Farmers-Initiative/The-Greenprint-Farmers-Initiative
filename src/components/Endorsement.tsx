@@ -7,7 +7,7 @@ const alignments = [
   {
     abbr: "AU",
     name: "African Union",
-    description: "Agenda 2063 — The Africa We Want",
+    description: "African Union Commission Simulation — The Africa We Want",
   },
   {
     abbr: "CAADP",

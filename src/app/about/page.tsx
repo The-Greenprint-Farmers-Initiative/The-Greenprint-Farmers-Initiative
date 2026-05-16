@@ -3,6 +3,7 @@ import Footer from "@/components/Footer";
 import AboutHero from "@/components/about/AboutHero";
 import AboutOrigin from "@/components/about/AboutOrigin";
 import AboutPrinciples from "@/components/about/AboutPrinciples";
+import AboutLeadership from "@/components/about/AboutLeadership";
 import AboutQuote from "@/components/about/AboutQuote";
 
 export const metadata = {
@@ -18,6 +19,7 @@ export default function AboutPage() {
       <AboutHero />
       <AboutOrigin />
       <AboutPrinciples />
+      <AboutLeadership />
       <AboutQuote />
       <Footer />
     </main>
