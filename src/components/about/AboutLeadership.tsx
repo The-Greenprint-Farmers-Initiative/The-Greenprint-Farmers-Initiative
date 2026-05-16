@@ -8,19 +8,19 @@ const founders = [
     name: "Fatima Binta Lawrence",
     role: "Co-Founder",
     image: "/images/team/fatima-binta-lawrence.jpg",
-    bio: "A results-driven leader across community development, social entrepreneurship, and agriculture. Founder of GOOODDEEDS Empowerment Foundation, supporting widows and orphans while creating sustainable employment for families. With a background in Peace and Conflict Studies and direct experience in agricultural enterprise, she brings conflict-resolution, agronomic insight, and team-leadership to the Initiative — combining business acumen with the kind of compassion that builds durable institutions.",
+    bio: "A results-driven leader across community development, social entrepreneurship, and agriculture. As Founder of GOOODDEEDS Empowerment Foundation, she supports widows and orphans while creating sustainable employment for vulnerable families. With a background in Peace and Conflict Studies and direct experience in agricultural enterprise, she brings conflict-resolution, agronomic insight, and team-leadership expertise to the Initiative — combining disciplined business acumen with the kind of compassion that builds durable institutions and empowers the communities they serve.",
   },
   {
     name: "Uduogho Oritseweyinmi Temile",
     role: "Co-Founder",
     image: "/images/team/uduogho-temile.jpg",
-    bio: "A strategic business-administration professional with more than a decade across the bottling, beverage, and facility-management industries. She has consistently driven revenue growth, operational excellence, and market expansion — strengthening stakeholder relationships and brand reputation along the way. Her commitment to sustainability and corporate responsibility makes her a natural architect of the Initiative&apos;s operational model.",
+    bio: "A strategic business-administration professional with more than a decade across the bottling, beverage, and facility-management industries. She has consistently driven revenue growth, operational excellence, and market expansion across diverse sectors — strengthening stakeholder relationships, brand reputation, and the collaborative partnerships that support long-term organisational growth. Her commitment to sustainability and corporate responsibility makes her a natural architect of the Initiative&apos;s operational model, leading diverse teams toward shared goals with innovation and accountability.",
   },
   {
     name: "Ambassador Young Piero Omatseye",
     role: "Co-Founder",
     image: "/images/team/young-piero-omatseye.jpg",
-    bio: "Known as The Pacesetter — Managing Director of Jet Age Nation Builders, with operations in Zimbabwe and Mauritius, and an enterprise valued at over $50 million. He leads the Young Piero Organisation and serves as Director of Parliament at the African Union Commission Simulation. His career spans real estate, agriculture, finance, technology, and diplomacy — bringing boardroom discipline and continental reach to the work ahead.",
+    bio: "Known as The Pacesetter — Managing Director of Jet Age Nation Builders, with operations in Zimbabwe and Mauritius and an enterprise valued at over $50 million. He leads the Young Piero Organisation, a think-tank and empowerment platform for emerging African leaders, and serves as Director of Parliament at the African Union Commission Simulation. His career spans real estate, agriculture, finance, technology, and diplomacy — bringing boardroom discipline and continental reach to the work ahead.",
   },
 ];
 
