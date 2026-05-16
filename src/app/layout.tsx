@@ -4,7 +4,7 @@ import "./globals.css";
 export const metadata: Metadata = {
   title: "The Greenprint Farmers Initiative",
   description:
-    "A 15-year, $8.7 billion vision to build 72 agro-industrial hubs across Nigeria's 36 states.",
+    "A continental programme to transform Africa's food systems — beginning with 72 agro-industrial hubs across Nigeria's 36 states.",
   keywords: [
     "Greenprint Farmers Initiative",
     "Nigeria agriculture",

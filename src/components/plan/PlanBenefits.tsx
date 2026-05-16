@@ -15,6 +15,7 @@ const audiences = [
   {
     title: "For Nigeria",
     points: [
+      "The launch country for a continental programme",
       "2.4 million dignified jobs",
       "$8.7 billion in catalytic investment",
       "An end to dependency on food imports",

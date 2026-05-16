@@ -19,8 +19,11 @@ export default function Footer() {
               </div>
             </div>
             <p className="font-serif text-[#F2EDE2]/65 text-base leading-relaxed max-w-md">
-              A 15-year programme to build 72 agro-industrial hubs across Nigeria —
-              transforming the foundations of food security on the African continent.
+              A continental programme to transform food security across Africa —
+              beginning with 72 agro-industrial hubs across Nigeria&apos;s 36 states.
+            </p>
+            <p className="mt-4 font-serif italic text-sm text-[#C9A961]/80">
+              Born in Nigeria. Built for the African continent.
             </p>
           </div>
 

@@ -75,9 +75,13 @@ export default function HomeHero() {
           </motion.h1>
         </AnimatePresence>
 
-        <p className="mt-10 font-serif text-lg sm:text-xl text-[#F2EDE2]/70 max-w-xl leading-relaxed">
-          A $8.7 billion programme to build seventy-two integrated agro-industrial
-          hubs across Nigeria&apos;s thirty-six states.
+        <p className="mt-6 font-serif italic text-base sm:text-lg text-[#C9A961] max-w-xl">
+          Born in Nigeria. Built for the African continent.
+        </p>
+
+        <p className="mt-6 font-serif text-lg sm:text-xl text-[#F2EDE2]/70 max-w-xl leading-relaxed">
+          An $8.7 billion continental programme — beginning with seventy-two
+          integrated agro-industrial hubs across Nigeria, the proof country.
         </p>
 
         <div className="mt-12 flex flex-col sm:flex-row gap-5 items-start sm:items-center">

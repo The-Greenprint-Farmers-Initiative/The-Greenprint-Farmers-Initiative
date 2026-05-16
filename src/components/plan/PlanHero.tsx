@@ -19,10 +19,14 @@ export default function PlanHero() {
             <span className="display-italic text-[#C9A961]">delivered state by state.</span>
           </h1>
 
-          <div className="mt-12 max-w-2xl">
+          <p className="mt-10 font-serif italic text-lg sm:text-xl text-[#C9A961]">
+            Born in Nigeria. Built for the African continent.
+          </p>
+
+          <div className="mt-8 max-w-2xl">
             <p className="font-serif text-xl text-[#F2EDE2]/75 leading-[1.55]">
-              Seventy-two integrated hubs. Thirty-six states and the FCT. Three phases.
-              One coordinated rollout — anchored in Nigeria, designed for the African continent.
+              Seventy-two integrated hubs across thirty-six states and the FCT — the proof country
+              for a programme designed to travel across the African continent. Three phases. One coordinated rollout.
             </p>
           </div>
         </motion.div>

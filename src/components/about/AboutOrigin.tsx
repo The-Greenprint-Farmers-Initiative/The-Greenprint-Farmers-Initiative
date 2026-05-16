@@ -45,15 +45,16 @@ export default function AboutOrigin() {
           </p>
 
           <p className="font-serif text-[19px] text-[#F2EDE2]/75 leading-[1.65]">
-            What we propose is the construction of seventy-two integrated agro-industrial hubs across
-            Nigeria&apos;s thirty-six states and the Federal Capital Territory — each one a five-hundred-hectare
-            ecosystem combining open-field cultivation, soilless greenhouses, processing factories, tree
-            plantations, and solar power.
+            We begin in Nigeria. The first phase will construct seventy-two integrated agro-industrial
+            hubs across the country&apos;s thirty-six states and the Federal Capital Territory — each one a
+            five-hundred-hectare ecosystem combining open-field cultivation, soilless greenhouses,
+            processing factories, tree plantations, and solar power. Nigeria is the proof country.
           </p>
 
           <p className="font-serif text-[19px] text-[#F2EDE2]/75 leading-[1.65]">
-            The work is anchored in Nigeria. It is designed for the African continent. And it is offered,
-            in time, as a model that can travel anywhere the conditions repeat.
+            From there, the model is built to travel. Every hub, every protocol, every training module
+            is designed to be redeployed in any partner state across the continent where the conditions
+            repeat. Nigeria leads. Africa follows. The horizon is continental.
           </p>
         </motion.div>
       </div>
