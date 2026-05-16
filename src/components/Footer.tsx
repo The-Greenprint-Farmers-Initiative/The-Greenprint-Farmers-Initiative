@@ -57,9 +57,14 @@ export default function Footer() {
               </div>
               <div>
                 <div className="text-[11px] uppercase tracking-wider text-[#F2EDE2]/40 mb-1">Telephone</div>
-                <a href="tel:+2348066731036" className="hover:text-[#F2EDE2] transition-colors">
-                  +234 806 673 1036
-                </a>
+                <div className="space-y-0.5">
+                  <a href="tel:+2347079188800" className="block hover:text-[#F2EDE2] transition-colors">
+                    +234 707 918 8800
+                  </a>
+                  <a href="tel:+2348066731036" className="block hover:text-[#F2EDE2] transition-colors">
+                    +234 806 673 1036
+                  </a>
+                </div>
               </div>
               <div>
                 <div className="text-[11px] uppercase tracking-wider text-[#F2EDE2]/40 mb-1">Headquarters</div>

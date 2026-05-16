@@ -51,9 +51,14 @@ export default function StayForm() {
             </div>
             <div>
               <div className="text-[11px] uppercase tracking-[0.22em] text-[#C9A961] font-medium mb-2">Telephone</div>
-              <a href="tel:+2348066731036" className="font-serif text-lg text-[#F2EDE2] hover:text-[#C9A961] transition-colors">
-                +234 806 673 1036
-              </a>
+              <div className="space-y-1">
+                <a href="tel:+2347079188800" className="block font-serif text-lg text-[#F2EDE2] hover:text-[#C9A961] transition-colors">
+                  +234 707 918 8800
+                </a>
+                <a href="tel:+2348066731036" className="block font-serif text-lg text-[#F2EDE2] hover:text-[#C9A961] transition-colors">
+                  +234 806 673 1036
+                </a>
+              </div>
             </div>
             <div>
               <div className="text-[11px] uppercase tracking-[0.22em] text-[#C9A961] font-medium mb-2">Headquarters</div>
