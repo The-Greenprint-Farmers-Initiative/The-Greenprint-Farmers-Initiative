@@ -56,6 +56,12 @@ export async function submitEnquiry(input: EnquiryInput): Promise<EnquiryResult>
     if (message.length > 5000)
       return { ok: false, error: "Message is too long — please keep it under 5,000 characters." };
 
+    // Diagnostic: confirm API key is loaded (without logging the key)
+    if (!process.env.RESEND_API_KEY) {
+      console.error("RESEND_API_KEY missing on server");
+      return { ok: false, error: "Server not configured (missing API key). Please email us directly at info@greenprintfarmers.org." };
+    }
+
     // ── 1. Send the enquiry to the team
     const teamEmail = await resend.emails.send({
       from: FROM_DISPLAY,
@@ -67,8 +73,12 @@ export async function submitEnquiry(input: EnquiryInput): Promise<EnquiryResult>
     });
 
     if (teamEmail.error) {
-      console.error("Resend (team email) error:", teamEmail.error);
-      return { ok: false, error: "We couldn't deliver your enquiry — please try again or email us directly." };
+      console.error("Resend (team email) error:", JSON.stringify(teamEmail.error));
+      const errMsg = (teamEmail.error as { message?: string })?.message || "Unknown delivery error";
+      return {
+        ok: false,
+        error: `Delivery failed: ${errMsg}. Please email us directly at info@greenprintfarmers.org.`,
+      };
     }
 
     // ── 2. Send a branded auto-reply to the enquirer
@@ -82,8 +92,9 @@ export async function submitEnquiry(input: EnquiryInput): Promise<EnquiryResult>
 
     return { ok: true };
   } catch (err) {
-    console.error("submitEnquiry error:", err);
-    return { ok: false, error: "Something went wrong. Please try again in a moment." };
+    console.error("submitEnquiry exception:", err);
+    const msg = err instanceof Error ? err.message : "Unknown error";
+    return { ok: false, error: `Error: ${msg}. Please email us directly at info@greenprintfarmers.org.` };
   }
 }
 
