@@ -8,7 +8,7 @@ const founders = [
     name: "Fatima Binta Lawrence",
     role: "Co-Founder",
     image: "/images/team/fatima-binta-lawrence.jpg",
-    bio: "A results-driven leader in community development and social entrepreneurship. Founder of GOOODDEEDS Empowerment Foundation, supporting widows and orphans while creating sustainable employment for families. With a background in Peace and Conflict Studies, she brings conflict-resolution and team-leadership expertise to the Initiative — combining business acumen with the kind of compassion that builds durable institutions.",
+    bio: "A results-driven leader across community development, social entrepreneurship, and agriculture. Founder of GOOODDEEDS Empowerment Foundation, supporting widows and orphans while creating sustainable employment for families. With a background in Peace and Conflict Studies and direct experience in agricultural enterprise, she brings conflict-resolution, agronomic insight, and team-leadership to the Initiative — combining business acumen with the kind of compassion that builds durable institutions.",
   },
   {
     name: "Uduogho Oritseweyinmi Temile",
