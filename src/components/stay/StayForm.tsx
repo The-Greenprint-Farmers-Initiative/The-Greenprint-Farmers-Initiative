@@ -218,7 +218,7 @@ export default function StayForm() {
                   <button
                     type="submit"
                     disabled={isPending}
-                    className="text-[13px] font-medium tracking-wide text-[#0A0E13] bg-[#C9A961] hover:bg-[#D4B67A] disabled:bg-[#C9A961]/50 disabled:cursor-not-allowed px-8 py-4 transition-colors"
+                    className="text-[13px] font-medium tracking-wide text-[#0C1F17] bg-[#C9A961] hover:bg-[#D4B67A] disabled:bg-[#C9A961]/50 disabled:cursor-not-allowed px-8 py-4 transition-colors"
                   >
                     {isPending ? "Sending…" : "Send Enquiry"}
                   </button>
@@ -282,11 +282,11 @@ function Select({
         onChange={(e) => onChange(e.target.value)}
         className="w-full bg-transparent border-b border-[#F2EDE2]/15 pb-3 pt-2 font-serif text-lg text-[#F2EDE2] focus:outline-none focus:border-[#C9A961] transition appearance-none cursor-pointer"
       >
-        <option value="" className="bg-[#0A0E13]">
+        <option value="" className="bg-[#0C1F17]">
           Select…
         </option>
         {options.map((o) => (
-          <option key={o} value={o} className="bg-[#0A0E13]">
+          <option key={o} value={o} className="bg-[#0C1F17]">
             {o}
           </option>
         ))}

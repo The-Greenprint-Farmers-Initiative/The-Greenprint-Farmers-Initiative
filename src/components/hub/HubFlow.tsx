@@ -40,7 +40,7 @@ export default function HubFlow() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-50px" }}
               transition={{ duration: 0.6, delay: i * 0.08 }}
-              className="bg-[#0A0E13] py-10 px-2 grid grid-cols-1 md:grid-cols-12 gap-6 items-baseline"
+              className="bg-[#0C1F17] py-10 px-2 grid grid-cols-1 md:grid-cols-12 gap-6 items-baseline"
             >
               <div className="md:col-span-2">
                 <div className="font-serif italic text-[#C9A961] text-3xl">{s.num}</div>

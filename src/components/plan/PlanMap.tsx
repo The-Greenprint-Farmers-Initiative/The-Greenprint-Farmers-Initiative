@@ -33,7 +33,7 @@ export default function PlanMap() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
-          className="bg-[#11161E] p-6 sm:p-12 border border-[#F2EDE2]/8"
+          className="bg-[#11261C] p-6 sm:p-12 border border-[#F2EDE2]/8"
         >
           <NigeriaMap />
         </motion.div>

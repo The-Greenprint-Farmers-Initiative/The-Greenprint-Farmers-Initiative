@@ -64,7 +64,7 @@ export default function PlanBenefits() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.7, delay: i * 0.12 }}
-              className="bg-[#0A0E13] p-10"
+              className="bg-[#0C1F17] p-10"
             >
               <h3 className="font-serif text-2xl text-[#F2EDE2] mb-8 leading-tight">{a.title}</h3>
               <ul className="space-y-4">

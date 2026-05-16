@@ -15,8 +15,8 @@ export default function HubHero() {
           priority
           sizes="100vw"
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-[#0A0E13] via-[#0A0E13]/55 to-[#0A0E13]/10" />
-        <div className="absolute inset-0 bg-gradient-to-t from-[#0A0E13] via-transparent to-[#0A0E13]/20" />
+        <div className="absolute inset-0 bg-gradient-to-r from-[#0C1F17] via-[#0C1F17]/55 to-[#0C1F17]/10" />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#0C1F17] via-transparent to-[#0C1F17]/20" />
       </div>
 
       <div className="relative z-10 h-full flex flex-col justify-end pb-32 px-6 sm:px-12 lg:px-24 max-w-7xl mx-auto">

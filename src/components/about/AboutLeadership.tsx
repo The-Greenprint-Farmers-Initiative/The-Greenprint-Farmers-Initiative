@@ -61,7 +61,7 @@ export default function AboutLeadership() {
               transition={{ duration: 0.8, delay: i * 0.12, ease: [0.16, 1, 0.3, 1] }}
             >
               {/* Portrait */}
-              <div className="relative aspect-[4/5] mb-8 overflow-hidden bg-[#11161E]">
+              <div className="relative aspect-[4/5] mb-8 overflow-hidden bg-[#11261C]">
                 <Image
                   src={f.image}
                   alt={f.name}
@@ -69,7 +69,7 @@ export default function AboutLeadership() {
                   className="object-cover grayscale-[15%] transition-all duration-1000 hover:grayscale-0 hover:scale-[1.02]"
                   sizes="(max-width: 768px) 100vw, 33vw"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#0A0E13]/30 via-transparent to-transparent pointer-events-none" />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#0C1F17]/30 via-transparent to-transparent pointer-events-none" />
               </div>
 
               {/* Name + role */}

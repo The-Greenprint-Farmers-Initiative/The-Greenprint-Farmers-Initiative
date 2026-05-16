@@ -54,8 +54,8 @@ export default function HomeHero() {
               sizes="100vw"
             />
           </div>
-          <div className="absolute inset-0 bg-gradient-to-r from-[#0A0E13] via-[#0A0E13]/55 to-[#0A0E13]/15" />
-          <div className="absolute inset-0 bg-gradient-to-t from-[#0A0E13] via-transparent to-[#0A0E13]/30" />
+          <div className="absolute inset-0 bg-gradient-to-r from-[#0C1F17] via-[#0C1F17]/55 to-[#0C1F17]/15" />
+          <div className="absolute inset-0 bg-gradient-to-t from-[#0C1F17] via-transparent to-[#0C1F17]/30" />
         </div>
       ))}
 
@@ -87,7 +87,7 @@ export default function HomeHero() {
         <div className="mt-12 flex flex-col sm:flex-row gap-5 items-start sm:items-center">
           <Link
             href="/about"
-            className="text-[13px] font-medium tracking-wide text-[#0A0E13] bg-[#C9A961] hover:bg-[#D4B67A] px-6 py-3 transition-colors"
+            className="text-[13px] font-medium tracking-wide text-[#0C1F17] bg-[#C9A961] hover:bg-[#D4B67A] px-6 py-3 transition-colors"
           >
             Read the vision
           </Link>

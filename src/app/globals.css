@@ -1,9 +1,9 @@
 @import "tailwindcss";
 
 @theme inline {
-  --color-bg: #0A0E13;
-  --color-surface: #11161E;
-  --color-surface-2: #161D27;
+  --color-bg: #0C1F17;
+  --color-surface: #11261C;
+  --color-surface-2: #142E22;
   --color-line: rgba(242, 237, 226, 0.10);
   --color-line-strong: rgba(242, 237, 226, 0.18);
   --color-ink: #F2EDE2;
@@ -17,13 +17,13 @@
 
 html {
   scroll-behavior: smooth;
-  background: #0A0E13;
+  background: #0C1F17;
 }
 
 body {
   font-family: 'Inter', system-ui, sans-serif;
   font-feature-settings: 'ss01', 'ss03', 'cv11';
-  background: #0A0E13;
+  background: #0C1F17;
   color: #F2EDE2;
   overflow-x: hidden;
   min-height: 100vh;
@@ -52,14 +52,14 @@ body {
 
 /* Glass — used ONLY for overlays on photography */
 .glass-overlay {
-  background: rgba(10, 14, 19, 0.55);
+  background: rgba(12, 31, 23, 0.55);
   backdrop-filter: blur(20px) saturate(120%);
   -webkit-backdrop-filter: blur(20px) saturate(120%);
   border: 1px solid rgba(242, 237, 226, 0.10);
 }
 
 .glass-pill {
-  background: rgba(10, 14, 19, 0.4);
+  background: rgba(12, 31, 23, 0.4);
   backdrop-filter: blur(16px) saturate(140%);
   -webkit-backdrop-filter: blur(16px) saturate(140%);
   border: 1px solid rgba(242, 237, 226, 0.14);
@@ -67,7 +67,7 @@ body {
 
 /* Surface card — solid, editorial */
 .surface {
-  background: #11161E;
+  background: #11261C;
   border: 1px solid rgba(242, 237, 226, 0.08);
 }
 
@@ -76,12 +76,12 @@ body {
 }
 .surface-hover:hover {
   border-color: rgba(201, 169, 97, 0.30);
-  background: #131A23;
+  background: #142E22;
 }
 
 /* Top nav background */
 .nav-blur {
-  background: rgba(10, 14, 19, 0.78);
+  background: rgba(12, 31, 23, 0.78);
   backdrop-filter: blur(16px) saturate(140%);
   -webkit-backdrop-filter: blur(16px) saturate(140%);
   border-bottom: 1px solid rgba(242, 237, 226, 0.06);
@@ -126,7 +126,7 @@ body {
 
 /* Scrollbar */
 ::-webkit-scrollbar { width: 8px; }
-::-webkit-scrollbar-track { background: #0A0E13; }
+::-webkit-scrollbar-track { background: #0C1F17; }
 ::-webkit-scrollbar-thumb {
   background: rgba(242, 237, 226, 0.20);
   border-radius: 4px;

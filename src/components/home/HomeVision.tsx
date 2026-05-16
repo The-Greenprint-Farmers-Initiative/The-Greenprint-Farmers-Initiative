@@ -64,7 +64,7 @@ export default function HomeVision() {
                   className="object-cover transition-transform duration-1000 hover:scale-[1.04]"
                   sizes="(max-width: 768px) 100vw, 33vw"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#0A0E13]/40 to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#0C1F17]/40 to-transparent" />
               </div>
 
               <div className="font-serif italic text-[#C9A961] text-2xl mb-3">{p.num}.</div>

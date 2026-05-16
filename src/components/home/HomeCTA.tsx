@@ -29,7 +29,7 @@ export default function HomeCTA() {
           <div className="mt-12 flex flex-col sm:flex-row gap-5 items-center justify-center">
             <Link
               href="/stay-informed"
-              className="text-[13px] font-medium tracking-wide text-[#0A0E13] bg-[#C9A961] hover:bg-[#D4B67A] px-7 py-3.5 transition-colors"
+              className="text-[13px] font-medium tracking-wide text-[#0C1F17] bg-[#C9A961] hover:bg-[#D4B67A] px-7 py-3.5 transition-colors"
             >
               Begin a conversation
             </Link>

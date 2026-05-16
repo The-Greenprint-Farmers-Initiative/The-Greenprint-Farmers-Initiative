@@ -46,7 +46,7 @@ export default function HubTech() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-50px" }}
               transition={{ duration: 0.6, delay: i * 0.06 }}
-              className="bg-[#0A0E13] p-10 group"
+              className="bg-[#0C1F17] p-10 group"
             >
               <h3 className="font-serif text-2xl text-[#F2EDE2] mb-4 leading-tight">{t.title}</h3>
               <p className="font-serif text-base text-[#F2EDE2]/60 leading-[1.65] mb-6">{t.desc}</p>

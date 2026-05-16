@@ -44,7 +44,7 @@ export default function HomeProblem() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-50px" }}
               transition={{ duration: 0.6, delay: i * 0.08 }}
-              className="bg-[#0A0E13] p-10"
+              className="bg-[#0C1F17] p-10"
             >
               <div className="display text-[#F2EDE2] text-5xl sm:text-6xl mb-6">{s.value}</div>
               <div className="text-[#F2EDE2] font-medium text-sm leading-snug mb-2">{s.label}</div>

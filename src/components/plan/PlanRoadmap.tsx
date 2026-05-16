@@ -72,7 +72,7 @@ export default function PlanRoadmap() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-50px" }}
               transition={{ duration: 0.7, delay: i * 0.1 }}
-              className="bg-[#0A0E13] p-10 sm:p-14 grid grid-cols-1 lg:grid-cols-12 gap-10"
+              className="bg-[#0C1F17] p-10 sm:p-14 grid grid-cols-1 lg:grid-cols-12 gap-10"
             >
               <div className="lg:col-span-4">
                 <div className="text-[11px] uppercase tracking-[0.22em] text-[#C9A961] font-medium mb-4">
