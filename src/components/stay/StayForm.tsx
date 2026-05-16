@@ -1,21 +1,35 @@
 "use client";
 
-import { useState, FormEvent } from "react";
+import { useState, FormEvent, useTransition } from "react";
 import { motion } from "framer-motion";
+import { submitEnquiry } from "@/app/actions/submit-enquiry";
 
 export default function StayForm() {
   const [submitted, setSubmitted] = useState(false);
+  const [errorMessage, setErrorMessage] = useState<string | null>(null);
+  const [isPending, startTransition] = useTransition();
+
   const [form, setForm] = useState({
     name: "",
     email: "",
     organization: "",
     role: "",
     message: "",
+    website: "", // honeypot
   });
 
   const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
-    setSubmitted(true);
+    setErrorMessage(null);
+
+    startTransition(async () => {
+      const result = await submitEnquiry(form);
+      if (result.ok) {
+        setSubmitted(true);
+      } else {
+        setErrorMessage(result.error);
+      }
+    });
   };
 
   return (
@@ -45,17 +59,26 @@ export default function StayForm() {
           <div className="lg:col-span-4 space-y-8">
             <div>
               <div className="text-[11px] uppercase tracking-[0.22em] text-[#C9A961] font-medium mb-2">Email</div>
-              <a href="mailto:info@greenprintfarmers.org" className="font-serif text-lg text-[#F2EDE2] hover:text-[#C9A961] transition-colors">
+              <a
+                href="mailto:info@greenprintfarmers.org"
+                className="font-serif text-lg text-[#F2EDE2] hover:text-[#C9A961] transition-colors"
+              >
                 info@greenprintfarmers.org
               </a>
             </div>
             <div>
               <div className="text-[11px] uppercase tracking-[0.22em] text-[#C9A961] font-medium mb-2">Telephone</div>
               <div className="space-y-1">
-                <a href="tel:+2347079188800" className="block font-serif text-lg text-[#F2EDE2] hover:text-[#C9A961] transition-colors">
+                <a
+                  href="tel:+2347079188800"
+                  className="block font-serif text-lg text-[#F2EDE2] hover:text-[#C9A961] transition-colors"
+                >
                   +234 707 918 8800
                 </a>
-                <a href="tel:+2348066731036" className="block font-serif text-lg text-[#F2EDE2] hover:text-[#C9A961] transition-colors">
+                <a
+                  href="tel:+2348066731036"
+                  className="block font-serif text-lg text-[#F2EDE2] hover:text-[#C9A961] transition-colors"
+                >
                   +234 806 673 1036
                 </a>
               </div>
@@ -63,7 +86,11 @@ export default function StayForm() {
             <div>
               <div className="text-[11px] uppercase tracking-[0.22em] text-[#C9A961] font-medium mb-2">Headquarters</div>
               <div className="font-serif text-lg text-[#F2EDE2] leading-snug">
-                153 Green City Estate<br />Gwarinpa, Abuja<br />Nigeria
+                153 Green City Estate
+                <br />
+                Gwarinpa, Abuja
+                <br />
+                Nigeria
               </div>
             </div>
             <div>
@@ -91,17 +118,56 @@ export default function StayForm() {
                 <h3 className="display text-[#F2EDE2] text-3xl mb-5">Message received.</h3>
                 <p className="font-serif text-[#F2EDE2]/65 max-w-md mx-auto leading-relaxed">
                   Thank you for your interest in The Greenprint Farmers Initiative.
-                  A member of our team will respond within five working days.
+                  We&apos;ve sent a confirmation to your inbox, and a member of our team
+                  will respond personally within five working days.
                 </p>
               </motion.div>
             ) : (
-              <form onSubmit={handleSubmit} className="space-y-8">
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
-                  <Input label="Full name" value={form.name} onChange={(v) => setForm({ ...form, name: v })} required />
-                  <Input label="Email" type="email" value={form.email} onChange={(v) => setForm({ ...form, email: v })} required />
+              <form onSubmit={handleSubmit} className="space-y-8" noValidate>
+                {/* Honeypot — bots will fill this, humans won't see it */}
+                <div
+                  aria-hidden="true"
+                  style={{
+                    position: "absolute",
+                    left: "-9999px",
+                    width: "1px",
+                    height: "1px",
+                    overflow: "hidden",
+                  }}
+                >
+                  <label>
+                    Website
+                    <input
+                      type="text"
+                      tabIndex={-1}
+                      autoComplete="off"
+                      value={form.website}
+                      onChange={(e) => setForm({ ...form, website: e.target.value })}
+                    />
+                  </label>
                 </div>
 
-                <Input label="Organisation" value={form.organization} onChange={(v) => setForm({ ...form, organization: v })} />
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
+                  <Input
+                    label="Full name"
+                    value={form.name}
+                    onChange={(v) => setForm({ ...form, name: v })}
+                    required
+                  />
+                  <Input
+                    label="Email"
+                    type="email"
+                    value={form.email}
+                    onChange={(v) => setForm({ ...form, email: v })}
+                    required
+                  />
+                </div>
+
+                <Input
+                  label="Organisation"
+                  value={form.organization}
+                  onChange={(v) => setForm({ ...form, organization: v })}
+                />
 
                 <Select
                   label="I represent"
@@ -120,10 +186,11 @@ export default function StayForm() {
 
                 <div>
                   <label className="block text-[11px] uppercase tracking-[0.22em] text-[#C9A961] font-medium mb-3">
-                    Your message
+                    Your message <span className="text-[#F2EDE2]/40">*</span>
                   </label>
                   <textarea
                     rows={6}
+                    required
                     value={form.message}
                     onChange={(e) => setForm({ ...form, message: e.target.value })}
                     placeholder="Tell us about your interest in the programme…"
@@ -131,12 +198,19 @@ export default function StayForm() {
                   />
                 </div>
 
+                {errorMessage && (
+                  <div className="border-l-2 border-[#C9A961] pl-4 py-2 text-sm text-[#F2EDE2]/85 font-serif">
+                    {errorMessage}
+                  </div>
+                )}
+
                 <div className="pt-6">
                   <button
                     type="submit"
-                    className="text-[13px] font-medium tracking-wide text-[#0A0E13] bg-[#C9A961] hover:bg-[#D4B67A] px-8 py-4 transition-colors"
+                    disabled={isPending}
+                    className="text-[13px] font-medium tracking-wide text-[#0A0E13] bg-[#C9A961] hover:bg-[#D4B67A] disabled:bg-[#C9A961]/50 disabled:cursor-not-allowed px-8 py-4 transition-colors"
                   >
-                    Send Enquiry
+                    {isPending ? "Sending…" : "Send Enquiry"}
                   </button>
                 </div>
               </form>
