@@ -102,6 +102,9 @@ export async function submitEnquiry(input: EnquiryInput): Promise<EnquiryResult>
    Email templates — editorial dark, simple, deliverable
    ────────────────────────────────────────────────────────── */
 
+const SITE_URL = "https://greenprintfarmers.org";
+const LOGO_URL = `${SITE_URL}/images/brand/logo-mark.png`;
+
 function enquiryEmailHtml(d: {
   name: string;
   email: string;
@@ -128,7 +131,20 @@ function enquiryEmailHtml(d: {
 <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background:#FAF6F0;padding:40px 16px;">
   <tr><td align="center">
     <table role="presentation" width="600" cellpadding="0" cellspacing="0" style="max-width:600px;background:#FFFEF9;border:1px solid #E8E2D5;">
-      <tr><td style="padding:32px 36px 8px 36px;">
+      <tr><td style="padding:36px 36px 0 36px;">
+        <table role="presentation" cellpadding="0" cellspacing="0">
+          <tr>
+            <td style="vertical-align:middle;padding-right:14px;">
+              <img src="${LOGO_URL}" alt="Greenprint" width="48" height="48" style="display:block;border:0;outline:none;text-decoration:none;width:48px;height:48px;" />
+            </td>
+            <td style="vertical-align:middle;">
+              <div style="font-family:Georgia,'Times New Roman',serif;font-size:15px;font-weight:400;color:#0A0E13;letter-spacing:0.02em;line-height:1.2;">Greenprint</div>
+              <div style="font-size:9px;font-weight:600;letter-spacing:0.24em;text-transform:uppercase;color:#A88840;line-height:1.2;margin-top:3px;">Farmers Initiative</div>
+            </td>
+          </tr>
+        </table>
+      </td></tr>
+      <tr><td style="padding:24px 36px 8px 36px;">
         <div style="font-size:10px;font-weight:600;letter-spacing:0.24em;text-transform:uppercase;color:#A88840;">New Enquiry</div>
         <h1 style="margin:14px 0 0 0;font-family:Georgia,'Times New Roman',serif;font-size:30px;font-weight:400;color:#0A0E13;letter-spacing:-0.01em;">From ${escapeHtml(
           d.name,
@@ -187,9 +203,21 @@ function autoReplyHtml(d: { name: string }) {
 <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background:#FAF6F0;padding:48px 16px;">
   <tr><td align="center">
     <table role="presentation" width="600" cellpadding="0" cellspacing="0" style="max-width:600px;background:#FFFEF9;border:1px solid #E8E2D5;">
-      <tr><td style="padding:40px 40px 16px 40px;">
-        <div style="font-size:10px;font-weight:600;letter-spacing:0.24em;text-transform:uppercase;color:#A88840;">Greenprint Farmers Initiative</div>
-        <h1 style="margin:18px 0 0 0;font-family:Georgia,'Times New Roman',serif;font-size:34px;font-weight:400;line-height:1.1;color:#0A0E13;letter-spacing:-0.01em;">Thank you, ${escapeHtml(
+      <tr><td style="padding:44px 40px 0 40px;">
+        <table role="presentation" cellpadding="0" cellspacing="0">
+          <tr>
+            <td style="vertical-align:middle;padding-right:16px;">
+              <img src="${LOGO_URL}" alt="Greenprint" width="56" height="56" style="display:block;border:0;outline:none;text-decoration:none;width:56px;height:56px;" />
+            </td>
+            <td style="vertical-align:middle;">
+              <div style="font-family:Georgia,'Times New Roman',serif;font-size:18px;font-weight:400;color:#0A0E13;letter-spacing:0.02em;line-height:1.2;">Greenprint</div>
+              <div style="font-size:10px;font-weight:600;letter-spacing:0.24em;text-transform:uppercase;color:#A88840;line-height:1.2;margin-top:3px;">Farmers Initiative</div>
+            </td>
+          </tr>
+        </table>
+      </td></tr>
+      <tr><td style="padding:32px 40px 16px 40px;">
+        <h1 style="margin:0;font-family:Georgia,'Times New Roman',serif;font-size:34px;font-weight:400;line-height:1.1;color:#0A0E13;letter-spacing:-0.01em;">Thank you, ${escapeHtml(
           firstName,
         )}.</h1>
         <p style="margin:8px 0 0 0;font-family:Georgia,'Times New Roman',serif;font-style:italic;color:#A88840;font-size:18px;">Your enquiry has been received.</p>

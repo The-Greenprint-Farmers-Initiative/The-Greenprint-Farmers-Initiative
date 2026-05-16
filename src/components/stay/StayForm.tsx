@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, FormEvent, useTransition } from "react";
+import Image from "next/image";
 import { motion } from "framer-motion";
 import { submitEnquiry } from "@/app/actions/submit-enquiry";
 
@@ -43,6 +44,15 @@ export default function StayForm() {
           className="grid grid-cols-1 lg:grid-cols-12 gap-10 mb-16"
         >
           <div className="lg:col-span-3">
+            <div className="flex items-center gap-3 mb-5">
+              <div className="relative w-10 h-10">
+                <Image src="/images/Mask Group 3.svg" alt="Greenprint" fill className="object-contain" />
+              </div>
+              <div className="leading-tight">
+                <div className="font-serif text-sm font-medium text-[#F2EDE2] tracking-[0.04em]">Greenprint</div>
+                <div className="text-[9px] text-[#C9A961] uppercase tracking-[0.24em] font-medium">Farmers Initiative</div>
+              </div>
+            </div>
             <div className="eyebrow">Get in Touch</div>
           </div>
           <div className="lg:col-span-9">
