@@ -1,14 +1,17 @@
 "use client";
 
 import Image from "next/image";
-import { motion } from "framer-motion";
+import { useEffect, useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { X } from "lucide-react";
 
 type Founder = {
   name: string;
   role: string;
   tagline?: string;
   image: string;
-  bio: string; // paragraphs separated by blank line
+  bio: string;
+  extendedBio?: string; // paragraphs separated by a blank line
 };
 
 const founders: Founder[] = [
@@ -29,7 +32,8 @@ const founders: Founder[] = [
     role: "Co-Founder",
     tagline: "Driving Africa's future through strategic leadership and boardroom engagement.",
     image: "/images/team/young-piero-omatseye.jpg",
-    bio: `Ambassador Young Piero Omatseye, widely referred to as The Pacesetter, is expanding his influence beyond activism and youth advocacy into business leadership and corporate governance across Africa and beyond.
+    bio: "Known as The Pacesetter — Managing Director of Jet Age Nation Builders, with operations in Zimbabwe and Mauritius and an enterprise valued at over $50 million. He leads the Young Piero Organisation, a think-tank and empowerment platform for emerging African leaders, and serves as Director of Parliament at the African Union Commission Simulation. His career spans real estate, agriculture, finance, technology, and diplomacy — bringing boardroom discipline and continental reach to the work ahead.",
+    extendedBio: `Ambassador Young Piero Omatseye, widely referred to as The Pacesetter, is expanding his influence beyond activism and youth advocacy into business leadership and corporate governance across Africa and beyond.
 
 Omatseye is the Managing Director of Jet Age Nation Builders, with operations in Zimbabwe and Mauritius. Since its founding in 2019 with an initial investment of $100, the organisation has grown into a multinational enterprise valued at over $50 million by 2024. Its work spans investment, youth development, entrepreneurship, and innovation.
 
@@ -48,6 +52,23 @@ For him, Africa's future requires more than advocacy. It calls for disciplined l
 ];
 
 export default function AboutLeadership() {
+  const [selected, setSelected] = useState<Founder | null>(null);
+
+  // ESC to close + body scroll lock
+  useEffect(() => {
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setSelected(null);
+    };
+    if (selected) {
+      window.addEventListener("keydown", onKey);
+      document.body.style.overflow = "hidden";
+    }
+    return () => {
+      window.removeEventListener("keydown", onKey);
+      document.body.style.overflow = "";
+    };
+  }, [selected]);
+
   return (
     <section className="relative py-32 px-6 sm:px-12 lg:px-24 border-t border-[#F2EDE2]/8">
       <div className="max-w-7xl mx-auto">
@@ -74,63 +95,143 @@ export default function AboutLeadership() {
           </div>
         </motion.div>
 
-        {/* Card grid — items align to start so each card sizes to its own content */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-x-10 gap-y-16 items-start">
-          {founders.map((f, i) => {
-            const paragraphs = f.bio.split(/\n\s*\n/).map((p) => p.trim()).filter(Boolean);
-            return (
-              <motion.div
-                key={f.name}
-                initial={{ opacity: 0, y: 40 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-80px" }}
-                transition={{ duration: 0.8, delay: i * 0.12, ease: [0.16, 1, 0.3, 1] }}
-              >
-                {/* Portrait */}
-                <div className="relative aspect-[4/5] mb-8 overflow-hidden bg-[#11261C]">
-                  <Image
-                    src={f.image}
-                    alt={f.name}
-                    fill
-                    className="object-cover grayscale-[15%] transition-all duration-1000 hover:grayscale-0 hover:scale-[1.02]"
-                    sizes="(max-width: 768px) 100vw, 33vw"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#0C1F17]/30 via-transparent to-transparent pointer-events-none" />
-                </div>
+          {founders.map((f, i) => (
+            <motion.div
+              key={f.name}
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-80px" }}
+              transition={{ duration: 0.8, delay: i * 0.12, ease: [0.16, 1, 0.3, 1] }}
+            >
+              <div className="relative aspect-[4/5] mb-8 overflow-hidden bg-[#11261C]">
+                <Image
+                  src={f.image}
+                  alt={f.name}
+                  fill
+                  className="object-cover grayscale-[15%] transition-all duration-1000 hover:grayscale-0 hover:scale-[1.02]"
+                  sizes="(max-width: 768px) 100vw, 33vw"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#0C1F17]/30 via-transparent to-transparent pointer-events-none" />
+              </div>
 
-                {/* Role */}
-                <div className="text-[11px] uppercase tracking-[0.22em] text-[#C9A961] font-medium mb-3">
-                  {f.role}
-                </div>
+              <div className="text-[11px] uppercase tracking-[0.22em] text-[#C9A961] font-medium mb-3">
+                {f.role}
+              </div>
 
-                {/* Name */}
-                <h3 className="display text-[#F2EDE2] text-[1.75rem] mb-3 leading-[1.1]">
-                  {f.name}
-                </h3>
+              <h3 className="display text-[#F2EDE2] text-[1.75rem] mb-3 leading-[1.1]">
+                {f.name}
+              </h3>
 
-                {/* Optional tagline */}
-                {f.tagline && (
-                  <p className="font-serif italic text-[#C9A961] text-[15px] leading-snug mb-5">
-                    {f.tagline}
-                  </p>
-                )}
+              {f.tagline && (
+                <p className="font-serif italic text-[#C9A961] text-[15px] leading-snug mb-5">
+                  {f.tagline}
+                </p>
+              )}
 
-                {/* Bio paragraphs */}
-                <div className="space-y-4">
-                  {paragraphs.map((para, idx) => (
-                    <p
-                      key={idx}
-                      className="font-serif text-[16px] text-[#F2EDE2]/65 leading-[1.65]"
-                    >
-                      {para}
-                    </p>
-                  ))}
-                </div>
-              </motion.div>
-            );
-          })}
+              <p className="font-serif text-[16px] text-[#F2EDE2]/65 leading-[1.65]">
+                {f.bio}
+              </p>
+
+              {f.extendedBio && (
+                <button
+                  onClick={() => setSelected(f)}
+                  className="mt-5 link-line text-[13px] font-medium tracking-wide text-[#C9A961]"
+                >
+                  Read full profile →
+                </button>
+              )}
+            </motion.div>
+          ))}
         </div>
       </div>
+
+      {/* Profile modal */}
+      <AnimatePresence>
+        {selected && <ProfileModal founder={selected} onClose={() => setSelected(null)} />}
+      </AnimatePresence>
     </section>
+  );
+}
+
+function ProfileModal({ founder, onClose }: { founder: Founder; onClose: () => void }) {
+  const paragraphs = (founder.extendedBio || founder.bio)
+    .split(/\n\s*\n/)
+    .map((p) => p.trim())
+    .filter(Boolean);
+
+  return (
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      transition={{ duration: 0.3 }}
+      className="fixed inset-0 z-[100] flex items-start sm:items-center justify-center p-4 sm:p-8"
+      onClick={onClose}
+    >
+      {/* Backdrop */}
+      <div className="absolute inset-0 bg-[#0C1F17]/85 backdrop-blur-md" />
+
+      {/* Card */}
+      <motion.div
+        initial={{ opacity: 0, y: 30, scale: 0.97 }}
+        animate={{ opacity: 1, y: 0, scale: 1 }}
+        exit={{ opacity: 0, y: 30, scale: 0.97 }}
+        transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
+        onClick={(e) => e.stopPropagation()}
+        className="relative w-full max-w-3xl max-h-[92vh] overflow-y-auto bg-[#11261C] border border-[#F2EDE2]/10 shadow-2xl"
+      >
+        {/* Close */}
+        <button
+          onClick={onClose}
+          className="absolute top-5 right-5 z-10 w-10 h-10 flex items-center justify-center rounded-full bg-[#0C1F17]/80 backdrop-blur-md border border-[#F2EDE2]/15 text-[#F2EDE2]/70 hover:text-[#F2EDE2] hover:border-[#C9A961]/50 transition-colors"
+          aria-label="Close profile"
+        >
+          <X size={18} />
+        </button>
+
+        {/* Header with portrait + identity */}
+        <div className="grid grid-cols-1 sm:grid-cols-12 gap-0">
+          <div className="sm:col-span-5 relative aspect-[4/5] sm:aspect-auto sm:min-h-[420px] bg-[#0C1F17]">
+            <Image
+              src={founder.image}
+              alt={founder.name}
+              fill
+              className="object-cover"
+              sizes="(max-width: 768px) 100vw, 40vw"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t sm:bg-gradient-to-r from-[#11261C] via-transparent to-transparent pointer-events-none" />
+          </div>
+
+          <div className="sm:col-span-7 p-8 sm:p-10 flex flex-col justify-end">
+            <div className="text-[11px] uppercase tracking-[0.22em] text-[#C9A961] font-medium mb-3">
+              {founder.role}
+            </div>
+            <h3 className="display text-[#F2EDE2] text-3xl sm:text-4xl leading-[1.05] mb-3">
+              {founder.name}
+            </h3>
+            {founder.tagline && (
+              <p className="font-serif italic text-[#C9A961] text-[16px] leading-snug">
+                {founder.tagline}
+              </p>
+            )}
+          </div>
+        </div>
+
+        <div className="hairline mx-8 sm:mx-10" />
+
+        {/* Full bio */}
+        <div className="px-8 sm:px-10 py-10 space-y-5">
+          {paragraphs.map((para, idx) => (
+            <p
+              key={idx}
+              className="font-serif text-[16.5px] text-[#F2EDE2]/75 leading-[1.7]"
+            >
+              {para}
+            </p>
+          ))}
+        </div>
+      </motion.div>
+    </motion.div>
   );
 }
