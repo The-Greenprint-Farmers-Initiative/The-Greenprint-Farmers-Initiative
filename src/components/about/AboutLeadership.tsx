@@ -20,6 +20,11 @@ const founders: Founder[] = [
     role: "Co-Founder",
     image: "/images/team/uduogho-temile.jpg",
     bio: "A strategic business-administration professional with more than a decade across the bottling, beverage, and facility-management industries. She has consistently driven revenue growth, operational excellence, and market expansion across diverse sectors — strengthening stakeholder relationships, brand reputation, and the collaborative partnerships that support long-term organisational growth. Her commitment to sustainability and corporate responsibility makes her a natural architect of the Initiative's operational model, leading diverse teams toward shared goals with innovation and accountability.",
+    extendedBio: `Uduogho Oritseweyinmi Temile is a strategic business administration professional with over 10 years of experience spanning the bottling and beverage industry, as well as facility management. With a strong understanding of complex business environments, she has consistently driven revenue growth, operational excellence, and market expansion across diverse sectors.
+
+She is highly skilled in improving productivity through efficient operational management, strategic planning, and effective resource allocation. Her expertise also extends to building strong stakeholder relationships, strengthening brand reputation, and fostering collaborative partnerships that support long-term organisational growth.
+
+Passionate about sustainability and corporate responsibility, Uduogho has a proven track record of leading diverse teams toward shared goals while promoting innovation, accountability, and impactful community development initiatives.`,
   },
   {
     name: "Mrs. Fatima Binta Lawrence",
