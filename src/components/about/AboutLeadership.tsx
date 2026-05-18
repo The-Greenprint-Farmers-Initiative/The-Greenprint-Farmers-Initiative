@@ -31,6 +31,11 @@ Passionate about sustainability and corporate responsibility, Uduogho has a prov
     role: "Co-Founder",
     image: "/images/team/fatima-binta-lawrence.jpg",
     bio: "A results-driven leader across community development, social entrepreneurship, and agriculture. As Founder of GOOODDEEDS Empowerment Foundation, she supports widows and orphans while creating sustainable employment for vulnerable families. With a background in Peace and Conflict Studies and direct experience in agricultural enterprise, she brings conflict-resolution, agronomic insight, and team-leadership expertise to the Initiative — combining disciplined business acumen with the kind of compassion that builds durable institutions and empowers the communities they serve.",
+    extendedBio: `Fatima Binta Lawrence is a passionate and results-driven leader with extensive experience in community development and social entrepreneurship. She is the Founder of GOOODDEEDS Empowerment Foundation, an organisation committed to supporting widows and orphans while creating sustainable employment opportunities for multiple families.
+
+With a background in Peace and Conflict Studies, Fatima is highly skilled in conflict resolution, people management, and team leadership. She excels at organising diverse groups and driving them toward shared goals with innovation, accountability, and measurable impact.
+
+Her work combines business acumen with genuine compassion, delivering sustainable solutions that empower vulnerable communities.`,
   },
   {
     name: "Ambassador Young Piero Omatseye",
