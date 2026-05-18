@@ -27,7 +27,7 @@ export default function AboutHero() {
             <p className="font-serif text-xl text-[#F2EDE2]/75 leading-[1.55]">
               The Greenprint Farmers Initiative is a continental programme conceived to address the
               most consequential challenge of our time — the question of whether two and a half billion
-              Africans will eat with dignity in 2050. We begin in Nigeria.
+              Africans will eat with dignity in 2050.
             </p>
           </div>
         </motion.div>
