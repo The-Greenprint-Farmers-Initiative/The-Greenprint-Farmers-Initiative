@@ -1,6 +1,34 @@
 import Link from "next/link";
 import Image from "next/image";
 
+const socials = [
+  {
+    label: "X (Twitter)",
+    href: "https://x.com/Greenprint_Farm",
+    icon: (
+      <path d="M18.9 1.6h3.3l-7.2 8.2 8.5 11.3h-6.7l-5.2-6.8-6 6.8H1.5l7.7-8.8L1 1.6h6.8l4.7 6.2 5.4-6.2Zm-1.2 18.2h1.8L6.4 3.5H4.5l13.2 16.3Z" />
+    ),
+  },
+  {
+    label: "Instagram",
+    href: "https://www.instagram.com/greenprint_farm/",
+    icon: (
+      <>
+        <rect x="2.5" y="2.5" width="19" height="19" rx="5.5" fill="none" stroke="currentColor" strokeWidth="1.8" />
+        <circle cx="12" cy="12" r="4.2" fill="none" stroke="currentColor" strokeWidth="1.8" />
+        <circle cx="17.4" cy="6.6" r="1.3" />
+      </>
+    ),
+  },
+  {
+    label: "WhatsApp",
+    href: "https://wa.me/2347079188800",
+    icon: (
+      <path d="M12 2a10 10 0 0 0-8.6 15l-1.3 4.9 5-1.3A10 10 0 1 0 12 2Zm5.8 14.1c-.2.7-1.4 1.3-2 1.4-.5.1-1.2.1-1.9-.1-.4-.1-1-.3-1.8-.6-3-1.3-5-4.4-5.2-4.6-.1-.2-1.2-1.6-1.2-3.1 0-1.5.8-2.2 1-2.5.3-.3.6-.4.8-.4h.6c.2 0 .4 0 .7.5l.9 2.1c.1.2.1.4 0 .6l-.4.6c-.2.2-.3.4-.2.7.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.4 2.4 1.5.3.1.5.1.7-.1l.8-1c.2-.3.4-.2.7-.1l2 1c.3.1.5.2.6.3.1.2.1.8-.1 1.4Z" />
+    ),
+  },
+];
+
 export default function Footer() {
   return (
     <footer className="relative border-t border-[#F2EDE2]/8 mt-32">
@@ -25,6 +53,26 @@ export default function Footer() {
             <p className="mt-4 font-serif italic text-sm text-[#C9A961]/80">
               Born in Nigeria. Built for the African continent.
             </p>
+
+            <div className="mt-7">
+              <div className="eyebrow mb-4">Follow</div>
+              <div className="flex items-center gap-3">
+                {socials.map((s) => (
+                  <a
+                    key={s.label}
+                    href={s.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={s.label}
+                    className="w-10 h-10 flex items-center justify-center border border-[#F2EDE2]/15 text-[#F2EDE2]/70 hover:text-[#0C1F17] hover:bg-[#C9A961] hover:border-[#C9A961] transition-all duration-300"
+                  >
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                      {s.icon}
+                    </svg>
+                  </a>
+                ))}
+              </div>
+            </div>
           </div>
 
           <div className="md:col-span-3">
