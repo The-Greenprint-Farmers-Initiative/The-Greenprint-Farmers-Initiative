@@ -11,6 +11,7 @@ const links = [
   { href: "/about", label: "About" },
   { href: "/hub", label: "The Hub" },
   { href: "/plan", label: "The Plan" },
+  { href: "/journey", label: "The Journey" },
   { href: "/stay-informed", label: "Stay Informed" },
 ];
 
@@ -54,7 +55,7 @@ export default function Navbar() {
             </div>
           </Link>
 
-          <div className="hidden lg:flex items-center gap-8">
+          <div className="hidden lg:flex items-center gap-6 xl:gap-8">
             {links.map((link) => {
               const active = pathname === link.href;
               return (
